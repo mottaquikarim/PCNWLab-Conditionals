@@ -1,4 +1,4 @@
-# PCNWLab Conditionals
+# PCNWLab Conditionals (~18 problems)
 Conditionals topic lab
 
 To complete this lab, do the following:

@@ -86,6 +86,10 @@ console.log(generateRandomRGB$());
     @example generateLottoTicket(); // L 9 11-28
 */
 
+const generateLottoTicket = () =>  `L ${Math.floor(Math.random()*10)} ${Math.floor(Math.random()*16)}-${Math.floor(Math.random()*31)}`;
+
+console.log(generateLottoTicket());
+
 /*
     @func generatePhoneNumberWithAreaCode
     @param {number} areaCode

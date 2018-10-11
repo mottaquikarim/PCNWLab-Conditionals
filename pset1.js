@@ -14,6 +14,22 @@ function generateRandomNumberFromRange( s, e ) {
     @example generateTrafficLight(); // 'red' or 'blue' or 'green'
 */
 
+const generateTrafficLight = () => { 
+    let rndm = 0;
+    while (rndm === 0){
+        rndm = Math.floor(Math.random()*4);
+    }
+    if (rndm === 1){
+        return 'red';
+    } else if (rndm === 2){
+        return 'green';
+    } else if (rndm === 3){
+        return 'blue';
+    }
+};
+
+console.log(generateTrafficLight());
+
 /*
     @func generateRandomPhoneNumber
     @returns {string}

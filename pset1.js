@@ -36,15 +36,26 @@ console.log(generateTrafficLight());
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
 
-const generateRandomPhoneNumber = () => {
-    let pNum = `1`;
-    for(let i = 1; i < 11; i++){
-        if(i == 1 || i == 4 || i == 7) {
-            pNum += `-`;
+const generateRandomPhoneNumber = (areaCode = 'none') => {
+    let pNum = `1-`;
+    if (typeof areaCode === 'number'){
+        pNum += areaCode;
+        for(let i = 4; i < 11; i++){
+            if(i == 4 || i == 7) {
+                pNum += `-`;
+            }
+            pNum += Math.floor( Math.random() * 10 );
         }
-        pNum += Math.floor(Math.random()*11);
+        return pNum;
+    } else {
+        for(let i = 1; i < 11; i++){
+            if(i == 4 || i == 7) {
+                pNum += `-`;
+            }
+            pNum += Math.floor( Math.random() * 10 );
+        }
+        return pNum;
     }
-    return pNum;
 }
 
 console.log(generateRandomPhoneNumber());
@@ -104,6 +115,18 @@ console.log(generateLottoTicket());
     @example generatePhoneNumberWithAreaCode( 646 ); // "1-646-786-2825"
 */
 
+
+const generatePhoneNumberWithAreaCode = (areaCode) => {
+    if(typeof areaCode === 'number'){
+        return generateRandomPhoneNumber(areaCode);
+    } else {
+        return generateRandomPhoneNumber();
+    }
+}
+
+console.log( generatePhoneNumberWithAreaCode() );
+console.log( generatePhoneNumberWithAreaCode( 718 ) );
+console.log( generatePhoneNumberWithAreaCode( 646 ) );
 
 /*
     @func generateTicketWithLetters

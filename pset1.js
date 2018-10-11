@@ -69,6 +69,10 @@ const generateRandomRGB = () => {
 
 console.log(generateRandomRGB());
 
+const generateRandomRGB$ = () => `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`;
+
+console.log(generateRandomRGB$());
+
 /*
     @func generateLottoTicket
     @returns {string}

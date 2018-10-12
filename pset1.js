@@ -1,7 +1,9 @@
-function generateRandomNumberFromRange( s, e ) {
-    const random = s + Math.floor( Math.random() * (e-s+1) );
+function genRndmNumRange( min, max ) {
+    const random = min + Math.floor( Math.random() * (max-min+1) );
     return random;
 }
+
+console.log(genRndmNumRange(0, 9));
 
 /*
     @func generateTrafficLight
@@ -97,7 +99,7 @@ console.log(generateRandomRGB$());
     @example generateLottoTicket(); // L 9 11-28
 */
 
-const generateLottoTicket = () =>  `L ${Math.floor(Math.random()*10)} ${Math.floor(Math.random()*16)}-${Math.floor(Math.random()*31)}`;
+const generateLottoTicket = () => `L ${Math.floor(Math.random()*10)} ${Math.floor(Math.random()*16)}-${Math.floor(Math.random()*31)}`;
 
 console.log(generateLottoTicket());
 
@@ -127,6 +129,12 @@ const generatePhoneNumberWithAreaCode = (areaCode) => {
 console.log( generatePhoneNumberWithAreaCode() );
 console.log( generatePhoneNumberWithAreaCode( 718 ) );
 console.log( generatePhoneNumberWithAreaCode( 646 ) );
+console.log('***************************')
+console.log(generateRandomPhoneNumber( 718 ) );
+console.log(generateRandomPhoneNumber( 646 ) );
+
+
+
 
 /*
     @func generateTicketWithLetters
@@ -142,7 +150,11 @@ console.log( generatePhoneNumberWithAreaCode( 646 ) );
             
         @example generateLottoTicket(); // L g M-28
 */
+// A: 65 | Z: 90
 
+const generateTicketWithLetters = () => `L ${genRndmNumRange(0, 10)} ${(String.fromCharCode(genRndmNumRange(65, 90))).toLowerCase()} ${String.fromCharCode(genRndmNumRange(65, 90))}-${genRndmNumRange(0, 30)}`
+
+console.log(generateTicketWithLetters());
 /*
     @func rockPaperScissors
     @param {string} player1

@@ -228,6 +228,41 @@ console.log(rockPaperScissors()); // -1
     @example rockPaperScissors(); // -1
 */
 
+//problem 8
+
+const cmpChoice = () => {
+    let num = genRndmNumRange(0, 2)
+    if (num === 0){
+        console.log(`Computer Chose: 'paper'`)
+        return 'paper';
+    } else if ( num === 1){
+        console.log(`Computer Chose: 'rock'`)
+        return 'rock'
+    } else if ( num === 2){
+        console.log(`Computer Chose: 'scissors'`)
+        return 'scissors'
+    }
+};
+
+const RPSwithComputer = (player) => {
+    console.log(`Player Chose: '${player}'`)
+    let result = rockPaperScissors(player, cmpChoice());
+    if (result === 0){
+        return 'tied';
+    } else if (result === 1){
+        return 'player won';
+    } else if (result === 2){
+        return 'computer won'
+    } else {
+        return -1
+    }
+};
+
+console.log(RPSwithComputer( "rock" )); // 2, if computer won
+console.log(RPSwithComputer( "rock" )); // 1, if player won
+console.log(RPSwithComputer( "rock" )); // 0, if tied
+console.log(RPSwithComputer()); // -1
+
 /*
     @func calculateGrade
     @param {number} grade
@@ -245,6 +280,7 @@ console.log(rockPaperScissors()); // -1
     @example calculateGrade( "lol skool sucks" ); // Error
     
 */
+//problem 9
 
 function calculateGrade( grade ) {
     // Write your codes below here
@@ -261,7 +297,7 @@ function calculateGrade( grade ) {
         if grade is between [65, 0]
             UPDATE grade = F
     */
-    
+//problem 10    
     if ( grade > 90 ) {
         return "A";
     }

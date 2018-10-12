@@ -176,6 +176,42 @@ console.log(generateTicketWithLetters());
     @example rockPaperScissors(); // -1
 */
 
+const checkRkPpSc = (selection) => {
+    if(selection === 'scissors' || selection === 'rock' || selection === 'paper'){
+        return true;
+    }
+    return false
+};
+
+const rockPaperScissors = (player1 ='null', player2 ='null') => {
+    player1 = player1.toLowerCase();
+    player2 = player2.toLowerCase();
+    if (checkRkPpSc(player1) && checkRkPpSc(player2)){
+        if (player1 === 'paper' && player2 === 'rock'){
+            return 1;
+        } else if (player1 === 'paper' && player2 === 'scissors'){
+            return 2;
+        } else if (player1 === 'rock' && player2 === 'scissors'){
+            return 1;
+        } else if (player1 === 'rock' && player2 === 'paper'){
+            return 2;
+        } else if (player1 === 'scissors' && player2 === 'paper'){
+            return 1;
+        }else if (player1 === 'scissors' && player2 === 'rock'){
+            return 2;
+        } else {
+            return 0;
+        }
+    } 
+    return -1;
+};
+
+console.log(rockPaperScissors( "rock", "paper" )); // 2
+console.log(rockPaperScissors( "rock", "scissors")); // 1
+console.log(rockPaperScissors( "rock", "rock" )); // 0
+console.log(rockPaperScissors( "r", "p" )); // -1
+console.log(rockPaperScissors( "r")); // -1
+console.log(rockPaperScissors()); // -1
 /*
     @func RPSwithComputer
     @param {string} player

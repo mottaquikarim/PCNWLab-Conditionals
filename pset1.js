@@ -286,6 +286,7 @@ git status
 
 
 function calculateGrade( grade ) {
+
     if ( grade < 101 && grade >= 90 ){
         return 'A';
     } else if ( grade < 90 && grade >= 80 ){
@@ -297,17 +298,17 @@ function calculateGrade( grade ) {
     } else if ( grade < 60 && grade >= 0 ){
         return 'F';
     }
-    return 'Error'
+    return 'Error';
 }
 
-calculateGrade( 90 ); // A
- calculateGrade( 80 ); // B
- calculateGrade( 70 ); // C
- calculateGrade( 60 ); // D
- calculateGrade( 54 ); // F
- calculateGrade( -10 ); // Error
- calculateGrade( 10000 ); // Error
- calculateGrade( "lol skool sucks" ); // Error
+ console.log(calculateGrade( 90 )); // A
+ console.log(calculateGrade( 80 )); // B
+ console.log(calculateGrade( 70 )); // C
+ console.log(calculateGrade( 60 )); // D
+ console.log(calculateGrade( 54 )); // F
+ console.log(calculateGrade( -10 )); // Error
+ console.log(calculateGrade( 10000 )); // Error
+ console.log(calculateGrade( "lol skool sucks" )); // Error
     // Write your codes below here
     /*
         assume that grade is the value the user input

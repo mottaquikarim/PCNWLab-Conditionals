@@ -1,5 +1,5 @@
 
-function generateRandomNumberFromRange( s, e ) {
+function generateRandomNumberFromRange( s, e, ) {
     const random = s + Math.floor( Math.random() * (e-s+1) );
     return random;
 }
@@ -16,18 +16,18 @@ function generateRandomNumberFromRange( s, e ) {
     @example generateTrafficLight(); // 'red' or 'blue' or 'green'
 */
 
-const generateTrafficLight = () => {
-  let random = generateRandomNumberFromRange( 1, 3 )
-  if (random === 1) {
-    return 'red' 
-  } else if (random === 2) {
-    return 'blue'
-  } else if (random === 3) {
-  return 'green'
-  }
-}
+// const generateTrafficLight = () => {
+//   let random = generateRandomNumberFromRange( 1, 3 )
+//   if (random === 1) {
+//     return 'red' 
+//   } else if (random === 2) {
+//     return 'blue'
+//   } else if (random === 3) {
+//   return 'green'
+//   }
+// }
 
-console.log(generateTrafficLight(2));
+// console.log(generateTrafficLight(2));
 
 /*
     @func generateRandomPhoneNumber
@@ -37,6 +37,11 @@ console.log(generateTrafficLight(2));
             
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
+function generateRandomPhoneNumber(){
+    let number = generateRandomNumberFromRange(1 , 9)
+    return `${1} - ${number}${number}${number} - ${number}${number}${number} - ${number}${number}${number}${number}`
+}
+console.log(generateRandomPhoneNumber());
 
 /*
     @func generateRandomRGB

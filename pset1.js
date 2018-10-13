@@ -45,9 +45,9 @@ function generateTrafficLight(){
 function generateRandomPhoneNumber(){
     const areaCodeArray = [332, 347, 646, 718, 917, 929] //NYC area codes
 
-    areaCode = areaCodeArray[generateRandomNumberFromRange(0,5)]
-    middleNum = generateRandomNumberFromRange(0,999)
-    endNum = generateRandomNumberFromRange(0,9999)
+    let areaCode = areaCodeArray[generateRandomNumberFromRange(0,5)]
+    let middleNum = generateRandomNumberFromRange(0,999)
+    let endNum = generateRandomNumberFromRange(0,9999)
 
     if (middleNum <= 9){
         middleNum = `00${middleNum}` 
@@ -66,7 +66,7 @@ function generateRandomPhoneNumber(){
         endNum = `0${endNum}`
     }
 
-    phoneNum = `1-${areaCode}-${middleNum}-${endNum}`
+    let phoneNum = `1-${areaCode}-${middleNum}-${endNum}`
 
     return phoneNum
 
@@ -138,9 +138,9 @@ function generateLottoTicket(){
 */
 
 function generateRandomPhoneNumberWithAreaCode(areaCode = 718){
-    middleNum = generateRandomNumberFromRange(0,999)
-    endNum = generateRandomNumberFromRange(0,9999)
-    phoneNum = `1-${areaCode}-${middleNum}-${endNum}`
+    let middleNum = generateRandomNumberFromRange(0,999)
+    let endNum = generateRandomNumberFromRange(0,9999)
+    let phoneNum = `1-${areaCode}-${middleNum}-${endNum}`
 
     if (middleNum <= 9){
         middleNum = `00${middleNum}` 
@@ -184,15 +184,15 @@ console.log(generateRandomPhoneNumberWithAreaCode(347)) // 347 number
 */
 
 function generateTicketWithLetters(){
-    upperCase = String.fromCharCode(generateRandomNumberFromRange(65,90))
-    lowerCase = String.fromCharCode(generateRandomNumberFromRange(97,122))
-    number = generateRandomNumberFromRange(0,30)
+    let upperCase = String.fromCharCode(generateRandomNumberFromRange(65,90))
+    let lowerCase = String.fromCharCode(generateRandomNumberFromRange(97,122))
+    let number = generateRandomNumberFromRange(0,30)
     
     if (number <= 9){
         number = `0${number}`
     }
 
-    lottoTicket = `L ${lowerCase} ${upperCase}-${number}`
+    let lottoTicket = `L ${lowerCase} ${upperCase}-${number}`
 
     return lottoTicket
 }
@@ -221,21 +221,30 @@ function generateTicketWithLetters(){
 */
 
 function rockPaperScissors(player1, player2){
-    p1Input = player1.toLowerCase()
-    p2Input = player2.toLowerCase()
+    let p1Input = player1.toLowerCase()
+    let p2Input = player2.toLowerCase()
 
-    if ((p1Input !== "rock" && p1Input !== "paper" && p1Input !== "scissors") || (p2Input !== "rock" && p2Input !== "paper" && p2Input !== "scissors")){
+    if ((p1Input !== "rock" && p1Input !== "paper" && p1Input !== "scissors")  //all possible valid options for player 1
+    || (p2Input !== "rock" && p2Input !== "paper" && p2Input !== "scissors")) //all possible valid options for player 2
+    {
         return "Invalid input, try again."
     }
     else {
-        if ((p1Input === "rock" && p2Input === "rock") || (p1Input === "paper" && p2Input === "paper") || (p1Input === "scissors" && p2Input === "scissors")) {
+        if ((p1Input === "rock" && p2Input === "rock") // All possible cases of a tie
+        || (p1Input === "paper" && p2Input === "paper")
+        || (p1Input === "scissors" && p2Input === "scissors"))
+        {
             return "It's a tie"
         }
-        else if ((p1Input === "rock" && p2Input === "scissors") || (p1Input === "paper" && p2Input === "rock") || (p1Input === "scissors" && p2Input === "paper")){
+        else if ((p1Input === "rock" && p2Input === "scissors")  //All possible cases of player 1 winning
+        || (p1Input === "paper" && p2Input === "rock") 
+        || (p1Input === "scissors" && p2Input === "paper"))
+        {
             return "Player 1 Wins!"
         }
         else {
-            return "Player 2 Wins!"
+            return "Player 2 Wins!" //Covered all ties and all player1 wins, the only
+                                    //remaining possibilities would be of player 2 winning
         }
 
     }
@@ -266,23 +275,33 @@ console.log(rockPaperScissors("PAPER", "gun")) // Invalid Input
 */
 
 function RPSwithComputer(player){
-    pInput = player.toLowerCase()
+    let pInput = player.toLowerCase() //converts it to lower case so I don't have so I don't
+    //                                  have to care about the casing when comparing
 
     if ((pInput !== "rock" && pInput !== "paper" && pInput !== "scissors")){
         return "Invalid input, try again."
     }
     else {
-        comChoices = ["rock", "paper", "scissors"]
-        cInput = comChoices[generateRandomNumberFromRange(0,2)]
+        let comChoices = ["rock", "paper", "scissors"]
+        let cInput = comChoices[generateRandomNumberFromRange(0,2)]
 
-        if ((pInput === "rock" && cInput === "rock") || (pInput === "paper" && cInput === "paper") || (pInput === "scissors" && cInput === "scissors")) {
+        if ((pInput === "rock" && cInput === "rock")  //rock v rock tie
+        || (pInput === "paper" && cInput === "paper")  // paper v paper tie
+        || (pInput === "scissors" && cInput === "scissors")) //scissors v scissors tie
+        {
             return "It's a tie"
         }
-        else if ((pInput === "rock" && cInput === "scissors") || (pInput === "paper" && cInput === "rock") || (pInput === "scissors" && cInput === "paper")){
+        
+        else if ((pInput === "rock" && cInput === "scissors") //
+        || (pInput === "paper" && cInput === "rock") //
+        || (pInput === "scissors" && cInput === "paper")) // All three possibilities for player to win
+        {
             return "Player 1 Wins!"
         }
+        
         else {
-            return "The Computer Wins!"
+            return "The Computer Wins!" // Covered all other possibilities already so only thing that
+                                        // can happen if none of above cases are true is the computer wins
         }
 
     }

@@ -269,6 +269,7 @@ console.log(RPSwithComputer()); // -1
     @returns {string}
     @desc - given a numerical grade,
             determine the letter grade
+git status
 
     @example calculateGrade( 90 ); // A
     @example calculateGrade( 80 ); // B
@@ -282,7 +283,31 @@ console.log(RPSwithComputer()); // -1
 */
 //problem 9
 
+
+
 function calculateGrade( grade ) {
+    if ( grade < 101 && grade >= 90 ){
+        return 'A';
+    } else if ( grade < 90 && grade >= 80 ){
+        return 'B';
+    } else if ( grade < 80 && grade >= 70){
+        return 'C';
+    } else if ( grade < 70 && grade >= 60){
+        return 'D';
+    } else if ( grade < 60 && grade >= 0 ){
+        return 'F';
+    }
+    return 'Error'
+}
+
+calculateGrade( 90 ); // A
+ calculateGrade( 80 ); // B
+ calculateGrade( 70 ); // C
+ calculateGrade( 60 ); // D
+ calculateGrade( 54 ); // F
+ calculateGrade( -10 ); // Error
+ calculateGrade( 10000 ); // Error
+ calculateGrade( "lol skool sucks" ); // Error
     // Write your codes below here
     /*
         assume that grade is the value the user input
@@ -298,8 +323,8 @@ function calculateGrade( grade ) {
             UPDATE grade = F
     */
 //problem 10    
-    if ( grade > 90 ) {
-        return "A";
-    }
-   return "F"; // you may choose not to use this
-} 
+//     if ( grade > 90 ) {
+//         return "A";
+//     }
+//    return "F"; // you may choose not to use this
+

@@ -100,6 +100,14 @@ console.log('*********************************')
     @example generatePhoneNumberWithAreaCode( 646 ); // "1-646-786-2825"
 */
 
+const generatePhoneNumberWithAreaCode = (areaCode = generateRandomNumberFromRange(100, 999)) => {
+
+    return `1-${areaCode}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(1000,9999)}`
+
+}
+
+console.log(generatePhoneNumberWithAreaCode(718));
+console.log('*********************************')
 
 /*
     @func generateTicketWithLetters

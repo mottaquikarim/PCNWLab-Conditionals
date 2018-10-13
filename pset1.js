@@ -37,7 +37,7 @@ console.log(redLightGreenLight())
 */
 
 const phoneNum = () => {
-    phone2 = `${generateRandomNumberFromRange(1,1)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}`
+    phone2 = `${1}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}`
     return phone2;
 }
 
@@ -55,9 +55,9 @@ console.log(phoneNum())
 */
 
 const generateRandomRGB = () => {
-    red =  generateRandomNumberFromRange(0,999)
-    green = generateRandomNumberFromRange(0,999)
-    blue =  generateRandomNumberFromRange(0,999)
+    red =  generateRandomNumberFromRange(0,255)
+    green = generateRandomNumberFromRange(0,255)
+    blue =  generateRandomNumberFromRange(0,255)
     return `rgb(${red}, ${green}, ${blue})`
     }
     console.log(generateRandomRGB())
@@ -223,7 +223,7 @@ const RPSwithComputer = (player) => {
 }
 }
 
-console.log(RPSwithComputer("rock"))
+console.log(RPSwithComputer("scissors"))
 
 
 /*
@@ -276,3 +276,4 @@ function calculateGrade(grade) {
 } 
 
 console.log(calculateGrade(67));
+console.log(calculateGrade(55));

@@ -53,7 +53,7 @@ console.log('*********************************')
 */
 const generateRandomRGB = () => {
 
-    return generateRandomNumberFromRange(0, 255);
+    return `${generateRandomNumberFromRange(0, 255)}, ${generateRandomNumberFromRange(0, 255)}, ${generateRandomNumberFromRange(0, 255)}`;
 
 }
 
@@ -71,6 +71,20 @@ console.log('*********************************')
     
     @example generateLottoTicket(); // L 9 11-28
 */
+
+const generateLottoTicket = () => {
+
+    const randomNum9 = generateRandomNumberFromRange(0,9);
+    const randomNum15 = generateRandomNumberFromRange(0,15);
+    const randomNum30 = generateRandomNumberFromRange(0,30);
+
+    return `L 0-9 is: ${randomNum9}, 0-15 is ${randomNum15} & 0-30 is ${randomNum30}`;
+
+
+}
+
+console.log(generateLottoTicket());
+console.log('*********************************')
 
 /*
     @func generatePhoneNumberWithAreaCode

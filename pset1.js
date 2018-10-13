@@ -51,7 +51,14 @@ console.log('*********************************')
     
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
+const generateRandomRGB = () => {
 
+    return generateRandomNumberFromRange(0, 255);
+
+}
+
+console.log(generateRandomRGB());
+console.log('*********************************')
 /*
     @func generateLottoTicket
     @returns {string}

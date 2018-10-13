@@ -13,6 +13,17 @@ function generateRandomNumberFromRange( s, e ) {
             
     @example generateTrafficLight(); // 'red' or 'blue' or 'green'
 */
+const generateTrafficLight = randomNum => {
+    randomNum = Math.floor(Math.random() * 3) + 1;
+    if (randomNum === 1) return "red";
+    if (randomNum === 2) return "green";
+    if (randomNum === 3) return "blue";
+}
+
+//test
+console.log(generateTrafficLight());
+console.log(generateTrafficLight());
+console.log(generateTrafficLight());
 
 /*
     @func generateRandomPhoneNumber
@@ -22,6 +33,24 @@ function generateRandomNumberFromRange( s, e ) {
             
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
+const generateRandomPhoneNumber = noInput => {
+    let a = Math.floor(Math.random() * 10);
+    let b = Math.floor(Math.random() * 10);
+    let c = Math.floor(Math.random() * 10);
+    let d = Math.floor(Math.random() * 10);
+    let e = Math.floor(Math.random() * 10);
+    let f = Math.floor(Math.random() * 10);
+    let g = Math.floor(Math.random() * 10);
+    let h = Math.floor(Math.random() * 10);
+    let i = Math.floor(Math.random() * 10);
+    let j = Math.floor(Math.random() * 10);
+    return `1-${a}${b}${c}-${d}${e}${f}-${g}${h}${i}${j}`;
+}
+
+//test
+console.log(generateRandomPhoneNumber());
+console.log(generateRandomPhoneNumber());
+console.log(generateRandomPhoneNumber());
 
 /*
     @func generateRandomRGB
@@ -33,6 +62,17 @@ function generateRandomNumberFromRange( s, e ) {
     
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
+const generateRandomRGB = noInput => {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+//test
+console.log(generateRandomRGB());
+console.log(generateRandomRGB());
+console.log(generateRandomRGB());
 
 /*
     @func generateLottoTicket
@@ -46,6 +86,17 @@ function generateRandomNumberFromRange( s, e ) {
     
     @example generateLottoTicket(); // L 9 11-28
 */
+const generateLottoTicket = noInput => {
+    let a = Math.floor(Math.random() * 10);
+    let b = Math.floor(Math.random() * 16);
+    let c = Math.floor(Math.random() * 31);
+    return `L ${a} ${b}-${c}`;
+}
+
+//test
+console.log(generateLottoTicket());
+console.log(generateLottoTicket());
+console.log(generateLottoTicket());
 
 /*
     @func generatePhoneNumberWithAreaCode

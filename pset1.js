@@ -35,8 +35,7 @@ const generateTrafficLight2 = () => {
         return 'red'
     }else if (color === 2){
         return 'green'
-    } else if (color === 3){
-        return "blue"}
+    } return "blue"
     
 }
 
@@ -175,7 +174,7 @@ console.log(generateTicketWithLetters());
 console.log(String.fromCharCode(65,66,90).toLowerCase());
 console.log('____________________________________________________________')
 
-/*
+/*  Problem 7:
     @func rockPaperScissors
     @param {string} player1
     @param {string} player2
@@ -199,21 +198,21 @@ console.log('____________________________________________________________')
 //SOLUTION:
 //LONG WAY:
 const rockPaperScissors = (player1, player2) => {
-        console.log ('Rock! Paper! Scissors! SHOO!')
+        console.log ('Rock! Paper! Scissors! SHOOT!')
 
         if (player1 === 'rock' && player2 === 'paper' || player1 === 'paper' && player2 === 'scissors' || 
         player1 === 'scissors' && player2 === 'rock'){
-            return 'player2 won'}
+            return '2, player2 won'}
             
             else if (player1 === 'rock' && player2 === 'scissors' || player1 === 'paper' && player2 === 'rock' 
             || player1 === 'scissors' && player2 === 'paper'){
-            return 'player1 won'}
+            return '1, player1 won'}
 
                 else if (player1 === 'scissors' && player2 === 'scissors' || player1 === 'rock' && player2 === 'rock'
                  || player1 === 'paper' && player2 === 'paper'){
-                     return 'tie'}
+                     return '0, tie'}
          
-                     else {return 'invalid input'}
+                     else {return '-1, invalid input'}
 
 }
 
@@ -223,7 +222,7 @@ console.log('____________________________________________________________')
 
 
 
-/*
+/*  Problem 8:
     @func RPSwithComputer
     @param {string} player
     @returns {number}
@@ -239,7 +238,68 @@ console.log('____________________________________________________________')
     @example rockPaperScissors(); // -1
 */
 
-/*
+//SOLUTION:
+const computerChoice = function computerChoice() {
+    let computerChoice2 = generateRandomNumberFromRange(1,3);
+
+    if (computerChoice2 === 1){
+        return 'rock'
+    }else if (computerChoice2 === 2){
+        return 'paper'
+    } 
+    return "scissors"
+}
+
+const RPSwithComputer = (player3) => {
+
+
+    //player1 = RPSwithComputer()
+    //player2 = computerChoice()
+
+    return rockPaperScissors (player3, computerChoice())
+
+}
+console.log(RPSwithComputer('rock'))
+
+
+
+//LONG WAY:
+// const computerChoice = function computerChoice() {
+//     let computerChoice2 = generateRandomNumberFromRange(1,3);
+
+//     if (computerChoice2 === 1){
+//         return 'rock'
+//     }else if (computerChoice2 === 2){
+//         return 'paper'
+//     } 
+//     return "scissors"
+// }
+
+// const RPSwithComputer2 = (player) => {
+//     console.log ('Rock! Paper! Scissors! SHOO!')
+
+
+//     if (player === 'rock' && computerChoice() === 'paper' || player === 'paper' && computerChoice() === 'scissors' || 
+//     player === 'scissors' && computerChoice() === 'rock'){
+//         return '2, player2 won'}
+        
+//         else if (player === 'rock' && computerChoice() === 'scissors' || player === 'paper' && computerChoice() === 'rock' 
+//         || player === 'scissors' && computerChoice() === 'paper'){
+//         return '1, player1 won'}
+
+//             else if (player === 'scissors' && computerChoice() === 'scissors' || player === 'rock' && computerChoice() === 'rock'
+//              || player === 'paper' && computerChoice() === 'paper'){
+//                  return '0, tie'}
+     
+//                  else {return '-1, invalid input'}
+
+
+// }
+
+// console.log(RPSwithComputer2('paper'))
+
+
+/*  Problem 9:
     @func calculateGrade
     @param {number} grade
     @returns {string}

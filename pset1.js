@@ -36,7 +36,14 @@ console.log(generateTrafficLight());
             
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
+const generateRandomPhoneNumber = () => {
+    const middleNumber = (generateRandomNumberFromRange(100,999));
+    const lastNumber = (generateRandomNumberFromRange(100,999));
+    const firstNumber = (generateRandomNumberFromRange(100,999));
+    return `1-${middleNumber}-${lastNumber}-${firstNumber}`
 
+}
+    console.log(generateRandomPhoneNumber());
 /*
     @func generateRandomRGB
     @returns {string}

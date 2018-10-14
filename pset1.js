@@ -129,7 +129,7 @@ const generateTicketWithLetters = () => {
     const randomLowerCasedLetter = String.fromCharCode(generateRandomNumberFromRange(65, 90)).toLowerCase();
     const randomUpperCasedLetter = String.fromCharCode(generateRandomNumberFromRange(65, 90));
     
-    return `L [${randomLowerCasedLetter}] [${randomUpperCasedLetter}] [${generateRandomNumberFromRange(0, 30)}]`;
+    return `L [${randomLowerCasedLetter}] [${randomUpperCasedLetter}]-[${generateRandomNumberFromRange(0, 30)}]`;
 
 }
 
@@ -195,6 +195,28 @@ console.log('*********************************');
     @example rockPaperScissors(); // -1
 */
 
+const computerChoices = function computerChoices(num){
+    if(num === 1) return 'rock';
+     else if(num === 2) return 'paper';
+     else return 'scissors';
+}
+
+// console.log(computerChoices(generateRandomNumberFromRange(1,3)))
+// console.log(rockPaperScissors('rock', computerChoices(generateRandomNumberFromRange(1,3))));
+
+const RPSwithComputer = (player) => {
+
+    return rockPaperScissors(player, computerChoices(generateRandomNumberFromRange(1,3)));
+    
+}
+
+console.log(RPSwithComputer('rock'), 'Remember 1 = player 1 won; 2 = computer won; 0 = tie');
+console.log(RPSwithComputer('paper'), 'Remember 1 = player 1 won; 2 = computer won; 0 = tie');
+console.log(RPSwithComputer('scissors'), 'Remember 1 = player 1 won; 2 = computer won; 0 = tie');
+console.log(RPSwithComputer('rock'), 'Remember 1 = player 1 won; 2 = computer won; 0 = tie');
+console.log(RPSwithComputer('rock'), 'Remember 1 = player 1 won; 2 = computer won; 0 = tie');
+console.log(RPSwithComputer('scissors'), 'Remember 1 = player 1 won; 2 = computer won; 0 = tie');
+
 /*
     @func calculateGrade
     @param {number} grade
@@ -213,7 +235,7 @@ console.log('*********************************');
     
 */
 
-function calculateGrade( grade ) {
+function calculateGrade(grade){
     // Write your codes below here
     /*
         assume that grade is the value the user input
@@ -229,7 +251,7 @@ function calculateGrade( grade ) {
             UPDATE grade = F
     */
     
-    if ( grade > 90 ) {
+    if (grade > 90) {
         return "A";
     }
    return "F"; // you may choose not to use this

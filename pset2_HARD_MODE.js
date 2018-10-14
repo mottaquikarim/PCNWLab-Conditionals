@@ -9,6 +9,24 @@
 */
 
 
+
+/*
+const typeOfWhat = (param) => {
+    switch (typeof param) {
+        case 'string':
+        return 'string'
+
+        case 
+
+    }
+
+    
+
+};
+*/
+
+
+
 /*
     @function compareInts
     @param firstNum {number} 
@@ -28,6 +46,48 @@
     @example compareInts( 1,2 ); // false
 */
 
+//problem 1
+
+const coerceNum = (num) => {
+    num = parseInt(num, 10);
+    num = Number(num);
+    return num;
+};
+
+const ckWholeNum = num => num % 1 === 0 ? num : num -= num % 1;
+
+
+
+    // if(num % 1 === 0){
+    //     return num
+    // } else {
+    //     return num -= (num % 1)
+    // }
+
+
+
+
+
+ const compareInts = (num1, num2) => {
+    num1 = coerceNum(num1);
+    num2 = coerceNum(num2);
+    num1 = ckWholeNum(num1);
+    num2 = ckWholeNum(num2);
+
+    if (!isNaN(num1) && !isNaN(num2)){
+        if (num1 > num2){
+            return true;
+        } 
+        return false;
+    } 
+    return `Inputs must be numbers
+    Value 1: ${num1} 
+    Value 2: ${num2}`
+ }
+
+ console.log(compareInts(6,10)) //false
+
+//  console.log(compareInts(5, 'number'));
 /*
     @function signOfProduct
     @param term1 {number}
@@ -42,6 +102,8 @@
                     - if term1...term3 are not numbers, throw error
     @example signOfProduct(-5, 6, -4); // 1
 */
+
+//problem 2
 
 /*
     @function signOfProduct2
@@ -59,6 +121,8 @@
     @example signOfProduct(-5, 6, -4, true); // 120
 */
 
+//problem 3
+
 /*
     @function anyUpperCase
     @param term {string}
@@ -71,6 +135,8 @@
                         some string methods (hint, look up string methods)
     @example anyUpperCase('teSt'); // true
 */
+
+//problem 4
 
 /*
     @function isEmptyString

@@ -180,6 +180,113 @@ console.log(signOfProduct2(5, 6, 4, true)); // 120
 
 //problem 4
 
+const anyUpperCase = (string) => {
+    if (string.match(/[A-Z]/g)){
+        return true;
+    }
+    return false;
+}
+console.log(anyUpperCase('robert')) // false
+console.log(anyUpperCase('roBert')) // true
+
+
+/*
+const letterIsCapital = (str) => {
+    if (str === 'A' || str === 'B'||str === 'C'||str === 'D'||str === 'E'||str === 'F'||str === 'G'||str === 'H'||str === 'I'||str === 'J'||str === 'K'||str === 'L'||str === 'M'||str === 'N'||str === 'O'||str === 'P'||str === 'Q'||str === 'R'||str === 'S'||str === 'T'||str === 'U'||str === 'V'||str === 'W'||str === 'X'||str === 'Y'||str === 'Z'){
+       return true; 
+    }
+    return false;
+}
+*/
+/*
+
+const sliceMeDaddy = (string, length, index) => {
+    console.log(string.charAt(index));
+    console.log(`sliceMeDaddy Called String: ${string} Length: ${length} index ${index}`)
+
+        if (letterIsCapital(string.charAt(index))){
+            anyUpperCase(string, -3, index);
+        }else {
+        anyUpperCase(string, length-1, index+1)
+        }
+}
+
+const anyUpperCase = (string, strLngth = -2, index = 0) => {
+    console.log(`UpperCase Called String: ${string} Length: ${strLngth} index ${index}`)
+    // let counter = strLngth;
+    // let index = ind;
+    if (strLngth === -2) {
+        sliceMeDaddy(string, string.length-1, index)
+    } 
+    else if (strLngth === -3) {
+        return true
+    }
+    else if (strLngth === -1){
+        return false
+    }
+    else if (strLngth > -1){
+    sliceMeDaddy(string, strLngth, index);
+    }
+    return false;
+    
+}
+*/
+/*
+const sliceMeDaddy = (string, length) => {
+    console.log(`sliceMeDaddy Called String: ${string} Length: ${length}`)
+    console.log(string.charAt(length));
+
+        if (letterIsCapital(string.charAt(length))){
+            anyUpperCase(string, -3, length);
+        }else {
+        anyUpperCase(string, length-1)
+        }
+}
+
+const anyUpperCase = (string, length = -2) => {
+    console.log(`UpperCase Called String: ${string} Length: ${length}`)
+    // let counter = strLngth;
+    // let index = ind;
+    if (length === -2) {
+        sliceMeDaddy(string, string.length-1)
+    } 
+    else if (length === -3) {
+        return true
+    }
+    else if (length === -1){
+        return false
+    }
+    else if (length > -1){
+    sliceMeDaddy(string, length);
+    }
+    return false;
+
+}
+*/
+
+
+
+
+
+//  console.log(anyUpperCase('teSt')); // true
+//  console.log(anyUpperCase('rObert'));
+
+
+
+
+ /*
+ function pow(x, n) {
+    if (n == 1) {
+      return x;
+    } else {
+        console.log(x);
+      return x * pow(x, n - 1);
+    }
+  }
+  
+  console.log( pow(2, 3));
+*/
+
 /*
     @function isEmptyString
     @param term {string}

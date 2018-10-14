@@ -27,7 +27,20 @@
                         in seperate functions that are invoked
     @example compareInts( 1,2 ); // false
 */
+const isNum = num => (typeof num === 'number') ? true : false;
+const ckWhole = num => {
+    const ans = Math.round(num);
+    if(isNum(num))
+        return ans;
+    else
+        return false;
+}
+const compareInts = (num1,num2) => ckWhole(num1) > ckWhole(num2) ? ckWhole(num1) : ckWhole(num2);
 
+console.log("Which is larger? 3 or 20: " + compareInts(3,20));
+console.log("Which is larger? 540 or 230: " + compareInts(540,230));
+console.log("Which is larger? 5.2 or 2: " + compareInts(5.2,2));
+console.log("");//New line for organization
 /*
     @function signOfProduct
     @param term1 {number}
@@ -42,7 +55,22 @@
                     - if term1...term3 are not numbers, throw error
     @example signOfProduct(-5, 6, -4); // 1
 */
-
+const signOfProduct = (num1,num2,num3) => {
+    if(ckWhole(num1) && ckWhole(num2) && ckWhole(num3)){
+        let ans = Math.sign(num1) + Math.sign(num2) + Math.sign(num3);
+        if (ans == -1 || ans == 3){
+            return 1;
+        }
+        else
+            return -1;
+    }
+    else
+        return `Error not numbers`;
+}
+console.log("Signs of 8, 16, 14: " + signOfProduct(8,16,4));
+console.log("Signs of -5, 6, -4: : " + signOfProduct(-5,6,-4));
+console.log("Signs of 2, -33, 1: : " + signOfProduct(2,-33,1));
+console.log("");//New line for organization
 /*
     @function signOfProduct2
     @param term1 {number}
@@ -58,7 +86,25 @@
                  in this instance)
     @example signOfProduct(-5, 6, -4, true); // 120
 */
-
+const signOfProduct2 = (num1,num2,num3,shouldRetProd = false) => {
+    if (shouldRetProd == true){
+        return num1*num2*num3;   
+    }
+    else if(ckWhole(num1) && ckWhole(num2) && ckWhole(num3)){
+        let ans = Math.sign(num1) + Math.sign(num2) + Math.sign(num3);
+        if (ans == -1 || ans == 3){
+            return 1;
+        }
+        else
+            return -1;
+    }
+    else
+        return `Error not numbers`;
+}
+console.log("Signs of 8, 16, 14: " + signOfProduct2(8,16,4));
+console.log("Signs of -5, 6, -4: : " + signOfProduct2(-5,6,-4,true));
+console.log("Signs of 2, -33, 1: : " + signOfProduct2(2,-33,1,false));
+console.log("");//New line for organization
 /*
     @function anyUpperCase
     @param term {string}
@@ -71,7 +117,15 @@
                         some string methods (hint, look up string methods)
     @example anyUpperCase('teSt'); // true
 */
-
+const anyUpperCase = myString => { //const testString = myString.toLowerCase; myString===testString ? true : false
+    const testString = myString.toLowerCase();
+    if(myString===testString)
+        return true
+    else
+        return false
+}
+console.log("'doEs this String have UpPercase?' : " + anyUpperCase('doEs this String have UpPercase?'));
+console.log("'this string has no uppercase' : " + anyUpperCase('this string has no uppercase'));
 /*
     @function isEmptyString
     @param term {string}
@@ -83,7 +137,10 @@
                     - '    ', you get the point
                     CHALLENGE: you don't need to use any sort of loops for this
 */
-
+const isEmptyString = myString => myString === '' ? true : false;
+console.log("Is this string empty? '': " + isEmptyString(''));
+console.log("Is this string empty? 'asd': " + isEmptyString('asd'));
+console.log("");//New line for organization
 /*
     @function parseInt
     @param term {string}
@@ -111,6 +168,7 @@
                         '5e4' -> 5000
 */
 
+console.log("");//New line for organization
 /*
     @function validatePassword
     @param pw1 {string}
@@ -125,6 +183,7 @@
                     - both pw1 and pw2 has at least one uppercase character
 */
 
+console.log("");//New line for organization
 /*
     @function validateEmailAddress
     @param term {string}
@@ -157,6 +216,7 @@
                         (...for now)
 */
 
+console.log("");//New line for organization
 /*
     @function truthTableEvaluator
     @param P {boolean}

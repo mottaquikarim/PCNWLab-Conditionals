@@ -37,11 +37,11 @@ function generateRandomNumberFromRange( s, e, ) {
             
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
-function generateRandomPhoneNumber(){
-    let number = generateRandomNumberFromRange(1 , 9)
-    return `${1} - ${number}${number}${number} - ${number}${number}${number} - ${number}${number}${number}${number}`
-}
-console.log(generateRandomPhoneNumber());
+// function generateRandomPhoneNumber() {
+//     let number = generateRandomNumberFromRange(1 , 9)
+//     return `${1} - ${number}${number}${number} - ${number}${number}${number} - ${number}${number}${number}${number}`
+// }
+// console.log(generateRandomPhoneNumber());
 
 /*
     @func generateRandomRGB
@@ -53,6 +53,15 @@ console.log(generateRandomPhoneNumber());
     
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
+
+// const generateRandomRGB = () => {
+//    let number = generateRandomNumberFromRange(1, 999);
+//    const random = generateRandomNumberFromRange(1, 999);
+//    let generate = generateRandomNumberFromRange(1, 9);
+//     return `rgb  ${number},  ${random} , ${generate}`
+// }
+
+// console.log(generateRandomRGB());
 
 /*
     @func generateLottoTicket
@@ -66,6 +75,16 @@ console.log(generateRandomPhoneNumber());
     
     @example generateLottoTicket(); // L 9 11-28
 */
+
+function generateLottoTicket() {
+    let A = generateRandomNumberFromRange( 0, 9 );
+    let B = generateRandomNumberFromRange( 0, 15 );
+    let C = generateRandomNumberFromRange( 0, 30 );
+
+    return `${A} ${B}-${C}`
+}
+
+console.log(generateLottoTicket())
 
 /*
     @func generatePhoneNumberWithAreaCode

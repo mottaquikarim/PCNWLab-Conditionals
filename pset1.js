@@ -103,7 +103,31 @@ console.log(generateLottoTicket());
     @example generatePhoneNumberWithAreaCode(); // "1-718-786-2825"
     @example generatePhoneNumberWithAreaCode( 646 ); // "1-646-786-2825"
 */
+function generateRandomNumberFromRange( s, e ) {
+    const random = s + Math.floor( Math.random() * (e-s+1) );
+    return random; }
 
+    
+let randomCode = function() {
+    let code1 = generateRandomNumberFromRange(0,9);
+    let code2 = generateRandomNumberFromRange(0,9);
+    let code3 = generateRandomNumberFromRange(0,9);
+    return `${code1}${code2}${code3}`
+}
+
+function generatePhoneNumberWithAreaCode(areaCode = randomCode()){
+    let num1 = 1;
+    let num5 = generateRandomNumberFromRange(0,9);
+    let num6 = generateRandomNumberFromRange(0,9);
+    let num7 = generateRandomNumberFromRange(0,9);
+    let num8 = generateRandomNumberFromRange(0,9);
+    let num9 = generateRandomNumberFromRange(0,9);
+    let num10 = generateRandomNumberFromRange(0,9);
+    let num11 = generateRandomNumberFromRange(0,9);
+    return `${num1}-${areaCode}-${num5}${num6}${num7}-${num8}${num9}${num10}${num11}`
+}
+
+console.log(generatePhoneNumberWithAreaCode())
 
 /*
     @func generateTicketWithLetters

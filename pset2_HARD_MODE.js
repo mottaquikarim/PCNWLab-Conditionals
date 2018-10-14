@@ -28,6 +28,24 @@
     @example compareInts( 1,2 ); // false
 */
 
+
+compareInts = (firstNum,secondNum) => {
+    if(typeof firstNum ==='string' || typeof secondNum==='string') return false
+    checkWholeNum(firstNum)
+    checkWholeNum(secondNum)
+    if(firstNum > secondNum) return true
+    return false
+    
+}
+
+checkWholeNum = (param) => { if(param % 1 != 0) return Math.floor(param) }
+     
+   
+
+
+console.log(compareInts("string",4.33))
+
+console.log("---------------------------")
 /*
     @function signOfProduct
     @param term1 {number}
@@ -43,6 +61,18 @@
     @example signOfProduct(-5, 6, -4); // 1
 */
 
+signOfProduct = (term1,term2,term3) => {
+    let count = 0
+    if(term1 < 0) count+= 1 
+    if(term2 < 0) count+= 1 
+    if(term3 < 0) count+= 1 
+    
+    if(count % 2 == 0) return "postive"
+    return "negative"
+}
+console.log(signOfProduct(-5, 6, -4))
+
+console.log("---------------------------")
 /*
     @function signOfProduct2
     @param term1 {number}
@@ -58,7 +88,22 @@
                  in this instance)
     @example signOfProduct(-5, 6, -4, true); // 120
 */
+signOfProduct2 = (term1,term2,term3,shouldRetProd=false) => {
+    if(shouldRetProd ===true) return term1 * term2 * term3
+    else{
+        let count = 0
+        if(term1 < 0) count+= 1 
+        if(term2 < 0) count+= 1 
+        if(term3 < 0) count+= 1 
+    
+        if(count % 2 == 0) return "postive"
+        return "negative"
+    }
+    
+}
+console.log(signOfProduct2(-5, 6, -4,true))
 
+console.log("---------------------------")
 /*
     @function anyUpperCase
     @param term {string}
@@ -72,6 +117,19 @@
     @example anyUpperCase('teSt'); // true
 */
 
+console.log("---------------------------")
+ const anyUpperCase = (term) => {
+    if(term === term.toLowerCase()) return "no uppercase values"
+    return "has uppercase values"
+
+    term === term.toUpperCase && term === term.toLowerCase 
+    haPpy != HAPPY && haPpy != happy
+    HAPPY != HAPPY && HAPPY != happy
+    true === true
+}
+
+
+console.log(anyUpperCase("Hello"))
 /*
     @function isEmptyString
     @param term {string}
@@ -84,6 +142,14 @@
                     CHALLENGE: you don't need to use any sort of loops for this
 */
 
+console.log("---------------------------")
+function isEmptyString(term){
+    term = term.trim()
+    if(term === "") return "empty"
+    return "Not empty"
+}
+
+console.log(isEmptyString("           "))
 /*
     @function parseInt
     @param term {string}
@@ -110,6 +176,25 @@
                         'f473' -> NaN
                         '5e4' -> 5000
 */
+console.log("---------------------------")
+console.log("parse int problem")
+function parseInt(param){
+    x = 0
+    exp = 0
+    for(let i=param.length-1;i>=0;i--){
+        
+        let num = param[i] * 1
+        x += num * (10 ** exp)
+        exp += 1
+    }
+
+
+    return x
+}
+
+console.log(parseInt("5628"))
+    
+
 
 /*
     @function validatePassword
@@ -124,7 +209,45 @@
                     - both pw1 and pw2 has at least one special character (!@#$%^&*)
                     - both pw1 and pw2 has at least one uppercase character
 */
+function validatePassword(pw1,pw2){
+    //check to see if pw1 and pw2 is not lowercase. 
+    //We need atleast 1 uppercase
+    
+    if(pw1!= pw1.toLowerCase && pw2!=pw2.toLowerCase){
+        //check to see equality
+        if(pw1 === pw2){
+            //check if length requirment is valid
+            if(pw1.length > 7 && pw2.length > 7){
+                let count = 0 //count of number characters atleast 3
+                let specialChar = 0 //count of special chars
+                for(let i =0;i<pw1.length;i++){
+                    if(pw1[i] * 1 != NaN) count++
+                    switch (pw1[i]) {
+                        case '!':
+                        case '@':
+                        case '#':
+                        case '$':
+                        case '%':
+                        case '^':
+                        case '&':
+                        case '*':
+                            specialChar++
+                    }
+                    
+                }
+                //check to see if atleast 3 numbers in string 
+                //and min 1 special char
+                if(count >= 3 && specialChar === 1){
+                    return true //conditions all met thus return true
+                }
+            }
+        }
+    }
+    
+    return false  //exit for loop and return false. not all conditions met.
+}
 
+console.log(validatePassword("Helloworld123!","Helloworld123!"))
 /*
     @function validateEmailAddress
     @param term {string}

@@ -144,28 +144,27 @@ console.log(generateTicketWithLetters())
     @example rockPaperScissors( "r" ); // -1
     @example rockPaperScissors(); // -1
 */
+console.log("----------------------------")
+console.log('Rock Paper Scissors game')
 function rockPaperScissors(arg1,arg2){
-    if(arg1 === "rock"){
-        if(arg2 ==="scissors") return 'player 1 wins'
-        else if(arg2=="paper") return 'player 2 wins'
-        else return 'tie'
+    if(arg1 === arg2) return 'tie'
+    else if(arg1 === "rock"){
+        console.log(arg2 ==="scissors" ? 'player 1 wins' : 'player 2 wins')
     }
     else if(arg1 === "paper"){
-        if(arg2 ==="scissors") return 'player 2 wins'
-        else if(arg2=="rock") return 'player 1 wins'
-        else return 'tie'
+        console.log(arg2 ==="scissors" ? 'player 2 wins' : 'player 1 wins')
+        
     }
     else if(arg1 == "scissors"){
-        if(arg2 == "paper") return 'player 1 wins'
-        else if(arg2 == "rock") return 'player 2 wins'
-        else return 'tie'
+        console.log(arg2 ==="paper" ? 'player 1 wins' : 'player 2 wins')
+        
     }
 
-    return -1
+    else console.log(-1)
     
 
 }
-console.log(rockPaperScissors("rock","scissors"));
+rockPaperScissors("rock","paper")
 
 /*
     @func RPSwithComputer

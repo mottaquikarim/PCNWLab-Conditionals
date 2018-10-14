@@ -116,12 +116,11 @@ console.log(generatePhoneNumberWithAreaCode(347))
 function generateTicketWithLetters(){
     var chars = "ABCDEFGHIJKLMNOPQRSTUVWXTZ"
     var chars2 = "abcdefghiklmnopqrstuvwxyz";
-    num1 =  generateRandomNumberFromRange(0,30)
-    num2 =  generateRandomNumberFromRange(1,26)  
-    num2 =  chars2[num2]
-    num3 =  generateRandomNumberFromRange(1,26)  
-    num3 =  chars[num3]
-    return `L ${num2} ${num3}-${num1}`
+    num1 =  String.fromCharCode(generateRandomNumberFromRange(65,90))
+    num2 =  String.fromCharCode(generateRandomNumberFromRange(97,122))  
+    num3=generateRandomNumberFromRange(0,30)
+    
+    return `L ${num2} ${num1}-${num3}`
 }
 
 console.log(generateTicketWithLetters())

@@ -28,6 +28,38 @@
     @example compareInts( 1,2 ); // false
 */
 
+const isNumber = (num) => {
+    if (typeof num === 'number') {
+        return num;
+    } else {
+        //return Number(num);
+        return false
+    }
+}
+console.log(isNumber(5));
+console.log(isNumber('7'));
+
+const isWholeNumber = (num) => {
+    if (num % 1 === 0) {
+        return `${num} is a whole number`;
+    } else {
+        return `${num} is not a whole number`;
+    }
+}
+console.log(isWholeNumber(255));
+console.log(isWholeNumber(0.324));
+
+
+const compareInts = (firstNum, secondNum) => {
+    if (firstNum > secondNum) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(compareInts(3, 5));
+console.log(compareInts(9, 5));
+
 /*
     @function signOfProduct
     @param term1 {number}
@@ -42,6 +74,63 @@
                     - if term1...term3 are not numbers, throw error
     @example signOfProduct(-5, 6, -4); // 1
 */
+
+const countThingInArray = (array, something) => {
+    let count = 0;
+    for (i = 0; i < array.length; i++) {
+        if (array[i] === something) {
+            count++;
+        }
+    }
+    return count;
+}
+
+const evenOrOdd = (num) => {
+    if (num % 2 === 0) {
+        return 'even';
+    } else {
+        return 'odd';
+    }
+}
+
+console.log(evenOrOdd(5))
+console.log(evenOrOdd(-5))
+console.log(evenOrOdd(0))
+
+const posOrNeg = (num) => {
+    if (num > 0) {
+        return 'positive';
+    } else if (num < 0) {
+        return 'negative';
+    } else {
+        return 'zero'
+    }
+}
+
+console.log(posOrNeg(5))
+console.log(posOrNeg(-5))
+console.log(posOrNeg(0))
+
+const signOfProduct = (term1, term2, term3) => {
+    const term1_Val = posOrNeg(term1);
+    const term2_Val = posOrNeg(term2);
+    const term3_Val = posOrNeg(term3);
+    let array = [term1_Val, term2_Val, term3_Val];
+    if (evenOrOdd(countThingInArray(array, 'negative')) === 'even') {
+        return 1;
+    } else {
+        return -1;
+    }
+}
+
+console.log(signOfProduct(4, -4, -4), 'expect 1')
+console.log(signOfProduct(-3, -8, -6), 'expect -1')
+console.log(signOfProduct(1, 7, 9), 'expect 1')
+console.log(signOfProduct(0, 0, 0), 'expect ?')
+
+//if count of terms of how many neg or pos are in array
+//if count of term negative is odd, return negative
+//if count of term negative is even, return positive
 
 /*
     @function signOfProduct2

@@ -28,6 +28,38 @@
     @example compareInts( 1,2 ); // false
 */
 
+const isNumber = (num) => {
+    if (typeof num === 'number') {
+        return num;
+    } else {
+        //return Number(num);
+        return false
+    }
+}
+console.log(isNumber(5));
+console.log(isNumber('7'));
+
+const isWholeNumber = (num) => {
+    if (num % 1 === 0) {
+        return `${num} is a whole number`;
+    } else {
+        return `${num} is not a whole number`;
+    }
+}
+console.log(isWholeNumber(255));
+console.log(isWholeNumber(0.324));
+
+
+const compareInts = (firstNum, secondNum) => {
+    if (firstNum > secondNum) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(compareInts(3, 5));
+console.log(compareInts(9, 5));
+
 /*
     @function signOfProduct
     @param term1 {number}
@@ -42,6 +74,8 @@
                     - if term1...term3 are not numbers, throw error
     @example signOfProduct(-5, 6, -4); // 1
 */
+
+
 
 /*
     @function signOfProduct2

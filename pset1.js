@@ -24,6 +24,22 @@ function generateTrafficLight(s, e){
 } 
 console.log (generateTrafficLight(1 , 3));
 
+//Better Version by Taq
+
+const generateTrafficLight1 = () => {
+    const light = generateRandomNumberFromRange(1,3);
+
+    if (light === 1 ){
+        return "red"
+    }
+    
+    if (light === 2){
+        return "green"
+    }
+    return "blue"
+}
+
+console.log(generateTrafficLight1());
 /*
     @func generateRandomPhoneNumber
     @returns {string}
@@ -211,6 +227,11 @@ console.log(generatePhoneNumberWithAreaCode(718));
         @example generateLottoTicket(); // L g M-28
 */
 
+const generateTicketWithLetters = () => {
+
+    return ``
+}
+
 /*
     @func rockPaperScissors
     @param {string} player1
@@ -287,3 +308,4 @@ console.log(generatePhoneNumberWithAreaCode(718));
 //     }
 //    return "F"; // you may choose not to use this
 // } 
+

@@ -106,17 +106,25 @@ console.log(generateLottoTicket());
 function generateRandomNumberFromRange( s, e ) {
     const random = s + Math.floor( Math.random() * (e-s+1) );
     return random; }
+function randomCode() {
+        let code1 = generateRandomNumberFromRange(0,9);
+        let code2 = generateRandomNumberFromRange(0,9);
+        let code3 = generateRandomNumberFromRange(0,9);
+        return `${code1}${code2}${code3}` }
 
-    
-let randomCode = function() {
-    let code1 = generateRandomNumberFromRange(0,9);
-    let code2 = generateRandomNumberFromRange(0,9);
-    let code3 = generateRandomNumberFromRange(0,9);
-    return `${code1}${code2}${code3}`
-}
-
-function generatePhoneNumberWithAreaCode(areaCode = randomCode()){
-    let num1 = 1;
+function generatePhoneNumberWithAreaCode(areaCode){
+    if (typeof areaCode === 'number') {
+        let num5 = generateRandomNumberFromRange(0,9);
+        let num6 = generateRandomNumberFromRange(0,9);
+        let num7 = generateRandomNumberFromRange(0,9);
+        let num8 = generateRandomNumberFromRange(0,9);
+        let num9 = generateRandomNumberFromRange(0,9);
+        let num10 = generateRandomNumberFromRange(0,9);
+        let num11 = generateRandomNumberFromRange(0,9);
+        return `1-${areaCode}-${num5}${num6}${num7}-${num8}${num9}${num10}${num11}`;
+    }
+    else
+    areaCode = randomCode();
     let num5 = generateRandomNumberFromRange(0,9);
     let num6 = generateRandomNumberFromRange(0,9);
     let num7 = generateRandomNumberFromRange(0,9);
@@ -124,7 +132,7 @@ function generatePhoneNumberWithAreaCode(areaCode = randomCode()){
     let num9 = generateRandomNumberFromRange(0,9);
     let num10 = generateRandomNumberFromRange(0,9);
     let num11 = generateRandomNumberFromRange(0,9);
-    return `${num1}-${areaCode}-${num5}${num6}${num7}-${num8}${num9}${num10}${num11}`
+    return `1-${areaCode}-${num5}${num6}${num7}-${num8}${num9}${num10}${num11}`
 }
 
 console.log(generatePhoneNumberWithAreaCode())
@@ -270,10 +278,6 @@ else if (player1 === 'paper') {
 }
 
 console.log(RPSwithComputer('rock'))
-
-
-
-
 
 /*
     @func calculateGrade

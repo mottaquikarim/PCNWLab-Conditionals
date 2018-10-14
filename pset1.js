@@ -38,9 +38,9 @@ console.log(generateTrafficLight());
 */
 const generateRandomPhoneNumber = () => {
     const middleNumber = (generateRandomNumberFromRange(100,999));
-    const lastNumber = (generateRandomNumberFromRange(100,999));
+    const lastNumber = (generateRandomNumberFromRange(1000,9999));
     const firstNumber = (generateRandomNumberFromRange(100,999));
-    return `1-${middleNumber}-${lastNumber}-${firstNumber}`
+    return `1-${firstNumber}-${middleNumber}-${lastNumber}`
 
 }
     console.log(generateRandomPhoneNumber());
@@ -96,7 +96,13 @@ console.log(generateLottoTicket());
     @example generatePhoneNumberWithAreaCode(); // "1-718-786-2825"
     @example generatePhoneNumberWithAreaCode( 646 ); // "1-646-786-2825"
 */
+const generatePhoneNumberWithAreaCode = (areaCode = 212) => {
+    const middleNumber = (generateRandomNumberFromRange(100,999));
+    const lastNumber = (generateRandomNumberFromRange(1000,9999));
+    return `1-${areaCode}-${middleNumber}-${lastNumber}`;
+}
 
+console.log(generatePhoneNumberWithAreaCode(212));
 
 /*
     @func generateTicketWithLetters

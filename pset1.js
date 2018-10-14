@@ -282,8 +282,24 @@ console.log(RPSwithComputer("scissors"), "   Player chose scissors.");
     
 */
 
-function calculateGrade( grade ) {
-    // Write your codes below here
+function calculateGrade( grade = "N/A") {
+    let letterGrade = "";
+    if( grade === "N/A" ) return "N/A";
+    if( typeof grade === "string" || grade > 100 || grade < 0 ) return "Error";
+    if( grade >= 90 ){
+        letterGrade = "A";
+    } else if( grade >= 80 ){
+        letterGrade = "B";
+    } else if( grade >= 70 ){
+        letterGrade = "C";
+    } else if( grade >= 60 ){
+        letterGrade = "D";
+    } else{
+        letterGrade = "F";
+    }
+   return letterGrade;
+} 
+
     /*
         assume that grade is the value the user input
         IF grade is between [100, 95]
@@ -297,9 +313,42 @@ function calculateGrade( grade ) {
         if grade is between [65, 0]
             UPDATE grade = F
     */
-    
-    if ( grade > 90 ) {
-        return "A";
+function calculateNewGrade( grade = "N/A") {
+    let letterGrade = "";
+    if( grade === "N/A" ) return "N/A";
+    if( typeof grade === "string" || grade > 100 || grade < 0 ) return "Error";
+    if( grade >= 95 ){
+        letterGrade = "A";
+    } else if( grade >= 85 ){
+        letterGrade = "B";
+    } else if( grade >= 75 ){
+        letterGrade = "C";
+    } else if( grade >= 65 ){
+        letterGrade = "D";
+    } else{
+        letterGrade = "F";
     }
-   return "F"; // you may choose not to use this
+   return letterGrade;
 } 
+
+//test
+console.log(calculateGrade(90), "A");
+console.log(calculateGrade(80), "B");
+console.log(calculateGrade(70), "C");
+console.log(calculateGrade(60), "D");
+console.log(calculateGrade(54), "F");
+console.log(calculateGrade(-10), "Error");
+console.log(calculateGrade(10000), "Error");
+console.log(calculateGrade("lol skool sucks"), "Error");
+console.log(calculateGrade(), "N/A");
+
+console.log(calculateNewGrade(95), "A");
+console.log(calculateNewGrade(85), "B");
+console.log(calculateNewGrade(75), "C");
+console.log(calculateNewGrade(65), "D");
+console.log(calculateNewGrade(54), "F");
+console.log(calculateNewGrade(-10), "Error");
+console.log(calculateNewGrade(10000), "Error");
+console.log(calculateNewGrade("lol skool sucks"), "Error");
+console.log(calculateNewGrade(), "N/A");
+

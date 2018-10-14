@@ -146,6 +146,25 @@ console.log(signOfProduct(5, 6, 4)); // 1
 
 //problem 3
 
+const signOfProduct2 = ( term1, term2, term3, shouldRetProd = false ) => {
+    if (shouldRetProd){
+    term1 = coerceNum(term1);
+    term2 = coerceNum(term2);
+    term3 = coerceNum(term3);
+        if ( !isNaN(term1) && !isNaN(term2) && !isNaN(term3) ){
+            return term1 * term2 * term3;
+         }
+    throw Error `Terms must be numbers`;
+    }
+
+return signOfProduct(term1, term2, term3);
+}
+
+console.log(signOfProduct2(5, 6, 4, true)); // 120
+// console.log(signOfProduct2(-5, 6, 4, true)); // -120
+// console.log(signOfProduct2(-5, 6, -4)); // 1
+// console.log(signOfProduct2(-5, -6, -4, true)); // -120
+
 /*
     @function anyUpperCase
     @param term {string}

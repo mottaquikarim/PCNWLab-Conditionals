@@ -298,6 +298,17 @@ const anyUpperCase = (string, length = -2) => {
                     - '    ', you get the point
                     CHALLENGE: you don't need to use any sort of loops for this
 */
+//problem 5
+const isEmptyString = (string) => {
+    string = string.replace(/ /g, '');
+    if (string !== ''){
+        return false;
+    }
+    return true;
+}
+
+console.log(`Is string ${"'robert'"} empty? ${isEmptyString('robert')}`);
+console.log(`Is string ${"'    '"} empty? ${isEmptyString('    ')}`);
 
 /*
     @function parseInt

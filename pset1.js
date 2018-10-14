@@ -124,16 +124,11 @@ console.log(generateLottoTicket());
     @example generatePhoneNumberWithAreaCode( 646 ); // "1-646-786-2825"
 */
 
-//function generatesPhoneNumberWithAreaCode(){
-    
+const generatePhoneNumberWithAreaCode = num => Math.floor(Math.random()*10) + "-" + Math.floor(Math.random()*1000) + "-" + Math.floor(Math.random()*1000)
 
+console.log(generatePhoneNumberWithAreaCode());
+console.log(generatePhoneNumberWithAreaCode(646));
 
-//}
-
-//const generateRandomPhoneNumber = value => Math.floor(Math.random()* 10)  + "-" + Math.floor(Math.random()* 1000) + "-" + Math.floor(Math.random()* 1000)
-//+ "-" + Math.floor(Math.random()* 1000);
-
-//console.log(generateRandomPhoneNumber());
 /*
     @func generateTicketWithLetters
     @returns {string}
@@ -155,9 +150,8 @@ console.log(generateLottoTicket());
 
    }
    
-   console.log(String.fromCharCode(generateTicketWithLetters(65, 90)));
-   console.log(String.fromCharCode(generateTicketWithLetters(65, 90)).toLocaleLowerCase());
-   console.log(Math.floor(Math.random() * 9));
+   console.log(String.fromCharCode(generateTicketWithLetters(65, 90)) + " " + (String.fromCharCode(generateTicketWithLetters(65, 90)).toLocaleLowerCase() + "-" + (Math.floor(Math.random() * 9))));
+   
 
 
 /*
@@ -196,7 +190,6 @@ console.log(generateLottoTicket());
     @example rockPaperScissors( "rock" ); // 0, if tied
     @example rockPaperScissors(); // -1
 */
-
 let userChoice = 'scissor';
 let computerChoice = Math.random();
 if (computerChoice < 0.34) {
@@ -240,6 +233,7 @@ if(choice1 === "scissors") {
 console.log("User Choice: " + userChoice);
 console.log("Computer Choice: " + computerChoice);
 compare(userChoice, computerChoice);
+
 /*
     @func calculateGrade
     @param {number} grade

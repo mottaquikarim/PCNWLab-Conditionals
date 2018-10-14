@@ -105,6 +105,29 @@ const ckWholeNum = num => num % 1 === 0 ? num : num -= num % 1;
 
 //problem 2
 
+const signOfProduct = (term1, term2, term3) => {
+    term1 = coerceNum(term1);
+    term2 = coerceNum(term2);
+    term3 = coerceNum(term3);
+    
+    if ( !isNaN(term1) && !isNaN(term2) && !isNaN(term3) ) {
+        let prod = Math.sign(term1) + Math.sign(term2) + Math.sign(term3); 
+            if (prod === 3 || prod === -1){
+                return 1;
+            }
+            return -1;
+    } 
+    throw Error `Terms must be numbers`;
+}
+
+console.log(signOfProduct(5, 6, 4)); // 1
+// console.log(signOfProduct(-5, 6, 4)); // -1
+// console.log(signOfProduct(-5, 6, -4)); // 1
+// console.log(signOfProduct(-5, -6, -4)); // -1
+// console.log(signOfProduct(5, 6, 'string')); // error
+
+
+
 /*
     @function signOfProduct2
     @param term1 {number}

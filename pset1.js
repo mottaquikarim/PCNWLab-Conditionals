@@ -34,6 +34,25 @@ console.log(generateTrafficLight(generateRandomNumberFromRange(1,3)))
             
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
+function generateRandomNumberFromRange( s, e ) {
+    const random = s + Math.floor( Math.random() * (e-s+1) );
+    return random;
+}
+function randomNumber(){
+    let secondNum = generateRandomNumberFromRange(0,9);
+    let thirdNum = generateRandomNumberFromRange(0,9);
+    let fourthNum = generateRandomNumberFromRange(0,9);
+    let fifthNum = generateRandomNumberFromRange(0,9);
+    let sixthNum = generateRandomNumberFromRange(0,9);
+    let seventhNum = generateRandomNumberFromRange(0,9);
+    let eigthNum = generateRandomNumberFromRange(0,9);
+    let ninthNum = generateRandomNumberFromRange(0,9);
+    let tenthNum = generateRandomNumberFromRange(0,9);
+    let eleventhNum = generateRandomNumberFromRange(0,9);
+    
+    return `1-${secondNum}${thirdNum}${fourthNum}-${fifthNum}${sixthNum}${seventhNum}-${eigthNum}${ninthNum}${tenthNum}${eleventhNum}`
+}
+console.log(randomNumber());
 
 /*
     @func generateRandomRGB

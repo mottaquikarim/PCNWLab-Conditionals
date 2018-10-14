@@ -124,16 +124,16 @@ console.log(generateLottoTicket());
     @example generatePhoneNumberWithAreaCode( 646 ); // "1-646-786-2825"
 */
 
-function generatesPhoneNumberWithAreaCode(){
+//function generatesPhoneNumberWithAreaCode(){
     
-    
 
-}
 
-const generateRandomPhoneNumber = value => Math.floor(Math.random()* 10)  + "-" + Math.floor(Math.random()* 1000) + "-" + Math.floor(Math.random()* 1000)
-+ "-" + Math.floor(Math.random()* 1000);
+//}
 
-console.log(generateRandomPhoneNumber());
+//const generateRandomPhoneNumber = value => Math.floor(Math.random()* 10)  + "-" + Math.floor(Math.random()* 1000) + "-" + Math.floor(Math.random()* 1000)
+//+ "-" + Math.floor(Math.random()* 1000);
+
+//console.log(generateRandomPhoneNumber());
 /*
     @func generateTicketWithLetters
     @returns {string}
@@ -148,6 +148,17 @@ console.log(generateRandomPhoneNumber());
             
         @example generateLottoTicket(); // L g M-28
 */
+
+   function generateTicketWithLetters(s, e ) {
+    const random = s + Math.floor( Math.random() * (e-s+1) );
+    return random;
+
+   }
+   
+   console.log(String.fromCharCode(generateTicketWithLetters(65, 90)));
+   console.log(String.fromCharCode(generateTicketWithLetters(65, 90)).toLocaleLowerCase());
+   console.log(Math.floor(Math.random() * 9));
+
 
 /*
     @func rockPaperScissors
@@ -185,6 +196,7 @@ console.log(generateRandomPhoneNumber());
     @example rockPaperScissors( "rock" ); // 0, if tied
     @example rockPaperScissors(); // -1
 */
+
 let userChoice = 'scissor';
 let computerChoice = Math.random();
 if (computerChoice < 0.34) {
@@ -228,7 +240,6 @@ if(choice1 === "scissors") {
 console.log("User Choice: " + userChoice);
 console.log("Computer Choice: " + computerChoice);
 compare(userChoice, computerChoice);
-
 /*
     @func calculateGrade
     @param {number} grade
@@ -263,16 +274,19 @@ compare(userChoice, computerChoice);
             UPDATE grade = F
     */
    function calculateGrade( grade ) {
-    if ( grade >96 && grade <=100  ) {
+    if ( grade >95 && grade <=100  ) {
         return "A";
-    }else if (grade >=95 && grade >=86){
+    }else if (grade >=86 && grade <=94){
         return "B";
-    } else if(grade >=85 && grade >=75){
+    } else if(grade <85 && grade >=75){
         return "C";
-    }else if (grade >=75 && grade >=65){
+    }else if (grade >=74 && grade >=65){
         return "D"; 
     } else {
         return "F";
     }   
 } 
-console.log(calculateGrade(87));
+console.log(calculateGrade(94));
+console.log(calculateGrade(75));
+console.log(calculateGrade(96));
+console.log(calculateGrade(62));

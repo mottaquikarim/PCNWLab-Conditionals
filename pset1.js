@@ -28,19 +28,20 @@ function generateRandomNumberFromRange( s, e ) {
 // console.log(generateTrafficLight2(1,3))
 
 //SHORTER WAY:
-// const generateTrafficLight2 = () => {
-//     let color = generateRandomNumberFromRange(1,3);
+const generateTrafficLight2 = () => {
+    let color = generateRandomNumberFromRange(1,3);
 
-//     if (color === 1){
-//         return 'red'
-//     }else if (color === 2){
-//         return 'green'
-//     } else if (color === 3){
-//         return "blue"}
+    if (color === 1){
+        return 'red'
+    }else if (color === 2){
+        return 'green'
+    } else if (color === 3){
+        return "blue"}
     
-// }
+}
 
-// console.log(generateTrafficLight2())
+console.log(generateTrafficLight2())
+console.log('____________________________________________________________')
 
 
 
@@ -55,23 +56,24 @@ function generateRandomNumberFromRange( s, e ) {
 
 //SOLUTION:
 //LONG WAY:
-// const generateRandomPhoneNumber = () => {
+const generateRandomPhoneNumber = () => {
 
-//     const  randomePhoneNumber1 = Math.floor(Math.random() * (999 - 100) + 100 )
-//     const  randomePhoneNumber2 = Math.floor(Math.random() * (999 - 100) + 100 )
-//     const  randomePhoneNumber3 = Math.floor(Math.random() * (9999 - 1000) + 1000 )
+    const  randomePhoneNumber1 = Math.floor(Math.random() * (999 - 100) + 100 )
+    const  randomePhoneNumber2 = Math.floor(Math.random() * (999 - 100) + 100 )
+    const  randomePhoneNumber3 = Math.floor(Math.random() * (9999 - 1000) + 1000 )
 
-//     return `1 - ${randomePhoneNumber1} - ${randomePhoneNumber2} - ${randomePhoneNumber3}`;   
-// }
+    return `1 - ${randomePhoneNumber1} - ${randomePhoneNumber2} - ${randomePhoneNumber3}`;   
+}
 
-// console.log(generateRandomPhoneNumber())
+console.log(generateRandomPhoneNumber())
 
 //SHORTER WAY:
-// const generateRandomPhoneNumber2 = () => {
-//     return `1-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(1000,9999)}`;
-// }
+const generateRandomPhoneNumber2 = () => {
+    return `1-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(1000,9999)}`;
+}
 
-// console.log(generateRandomPhoneNumber2());
+console.log(generateRandomPhoneNumber2());
+console.log('____________________________________________________________')
 
 
 /*  Problem 3:
@@ -86,11 +88,12 @@ function generateRandomNumberFromRange( s, e ) {
 */
 
 // SOLUTION:
-// const generateRandomRGB = () => {
+const generateRandomRGB = () => {
 
-//     return `rgb(${generateRandomNumberFromRange(0,255)},${generateRandomNumberFromRange(0,255)},${generateRandomNumberFromRange(0,255)})`
-// }
-// console.log(generateRandomRGB())
+    return `rgb(${generateRandomNumberFromRange(0,255)},${generateRandomNumberFromRange(0,255)},${generateRandomNumberFromRange(0,255)})`
+}
+console.log(generateRandomRGB())
+console.log('____________________________________________________________')
 
 /*  Problem 4:
     @func generateLottoTicket
@@ -107,17 +110,17 @@ function generateRandomNumberFromRange( s, e ) {
 
 //SOLUTION:
 //LONG WAY:
-// const generateLottoTicket = () => {
+const generateLottoTicket = () => {
 
-//     return `L${generateRandomNumberFromRange(0,9)} ${generateRandomNumberFromRange(0,15)}-${generateRandomNumberFromRange(0,30)}`;
-// }
+    return `L${generateRandomNumberFromRange(0,9)} ${generateRandomNumberFromRange(0,15)}-${generateRandomNumberFromRange(0,30)}`;
+}
 
-// console.log(generateLottoTicket());
+console.log(generateLottoTicket());
 
-// //SHORT WAY:
-// const generateLottoTicket2 = () =>  `L${generateRandomNumberFromRange(0,9)} ${generateRandomNumberFromRange(0,15)}-${generateRandomNumberFromRange(0,30)}`;
-// console.log(generateLottoTicket());
-
+//SHORT WAY:
+const generateLottoTicket2 = () =>  `L${generateRandomNumberFromRange(0,9)} ${generateRandomNumberFromRange(0,15)}-${generateRandomNumberFromRange(0,30)}`;
+console.log(generateLottoTicket());
+console.log('____________________________________________________________')
 
 /*  Problem 5:
     @func generatePhoneNumberWithAreaCode
@@ -134,12 +137,13 @@ function generateRandomNumberFromRange( s, e ) {
 */
 
 //SOLUTION:
-// const generatePhoneNumberWithAreaCode = (areaCode = generateRandomNumberFromRange(0,999)) => {
+const generatePhoneNumberWithAreaCode = (areaCode = generateRandomNumberFromRange(0,999)) => {
     
-//     return `${areaCode}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(1000,9999)}`;
-// }
+    return `${areaCode}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(1000,9999)}`;
+}
 
-// console.log(generatePhoneNumberWithAreaCode(100))
+console.log(generatePhoneNumberWithAreaCode(100))
+console.log('____________________________________________________________')
 
 
 /*  Problem 6:
@@ -169,6 +173,7 @@ const generateTicketWithLetters = () => {
 console.log(generateTicketWithLetters());
 
 console.log(String.fromCharCode(65,66,90).toLowerCase());
+console.log('____________________________________________________________')
 
 /*
     @func rockPaperScissors
@@ -192,19 +197,31 @@ console.log(String.fromCharCode(65,66,90).toLowerCase());
 */
 
 //SOLUTION:
+//LONG WAY:
 const rockPaperScissors = (player1, player2) => {
         console.log ('Rock! Paper! Scissors! SHOO!')
 
-        if (player1 === 'rock'){
-            return 'player1 won'
-        } else if (player1 === 'paper'){
-            return ''
-        } else if (player1 === 'scissors')
+        if (player1 === 'rock' && player2 === 'paper' || player1 === 'paper' && player2 === 'scissors' || 
+        player1 === 'scissors' && player2 === 'rock'){
+            return 'player2 won'}
+            
+            else if (player1 === 'rock' && player2 === 'scissors' || player1 === 'paper' && player2 === 'rock' 
+            || player1 === 'scissors' && player2 === 'paper'){
+            return 'player1 won'}
 
-    return (number)
+                else if (player1 === 'scissors' && player2 === 'scissors' || player1 === 'rock' && player2 === 'rock'
+                 || player1 === 'paper' && player2 === 'paper'){
+                     return 'tie'}
+         
+                     else {return 'invalid input'}
+
 }
 
-console.log(rockPaperScissors());
+console.log(rockPaperScissors('scissors','paper'));
+
+console.log('____________________________________________________________')
+
+
 
 /*
     @func RPSwithComputer

@@ -260,6 +260,7 @@ const RPSwithComputer = (player3) => {
 
 }
 console.log(RPSwithComputer('rock'))
+console.log('____________________________________________________________')
 
 
 
@@ -319,7 +320,9 @@ console.log(RPSwithComputer('rock'))
 
 function calculateGrade( grade ) {
     // Write your codes below here
-    /*
+
+
+    /*  GUIDE:
         assume that grade is the value the user input
         IF grade is between [100, 95]
             UPDATE grade = A (question: what kind of variable should A be?)
@@ -338,3 +341,23 @@ function calculateGrade( grade ) {
     }
    return "F"; // you may choose not to use this
 } 
+
+//SOLUTION:
+const calculateGrade2 = (grade) => {
+
+    if (grade >= 95 && grade <= 100){
+        return `${grade} = A`
+    } else if (grade >= 85 && grade <= 95){
+        return `${grade} = B`
+    } else if (grade >= 75 && grade <= 85){
+        return `${grade} = C`
+    } else if (grade >= 65 && grade <= 75){
+        return `${grade} = D`
+    } else if (grade >= 0 && grade <= 65){
+        return `${grade} = F`
+    }
+
+}
+console.log(calculateGrade2(96));
+
+

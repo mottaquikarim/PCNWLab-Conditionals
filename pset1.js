@@ -233,6 +233,37 @@ console.log(rockPaperScissors("paper", "paper"), 0);
     @example rockPaperScissors(); // -1
 */
 
+const RPSwithComputer = playerChoice => {
+    let num = 0;
+    let computerChoice = ["rock", "paper", "scissors"];
+    let index = Math.floor( Math.random() * 3 ) 
+    computerChoice = computerChoice[ index ];
+
+    ( playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors" ) ? num = 0 : num = -1;
+    if( num === -1 ){
+        return num;
+    } else if( playerChoice === computerChoice ){
+        num = 0;
+    } else if( playerChoice === "rock" && computerChoice === "scissors" ){
+        num = 1;
+    } else if( playerChoice === "paper" && computerChoice === "rock" ){
+        num = 1;
+    } else if( playerChoice === "scissors" && computerChoice === "paper" ){
+        num = 1;
+    } else {
+        num = 2;
+    }
+
+    return `${num}: becuz computer picked ${computerChoice}!`;
+}
+
+//test
+console.log(RPSwithComputer(), -1);
+console.log(RPSwithComputer("r"), -1);
+console.log(RPSwithComputer("rock"), "   Player chose rock.");
+console.log(RPSwithComputer("paper"), "   Player chose paper.");
+console.log(RPSwithComputer("scissors"), "   Player chose scissors.");
+
 /*
     @func calculateGrade
     @param {number} grade

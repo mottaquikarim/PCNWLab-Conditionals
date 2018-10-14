@@ -1,8 +1,8 @@
-function generateRandomNumberFromRange( s, e ) {
+/*unction generateRandomNumberFromRange( s, e ) {
     const random = s + Math.floor( Math.random() * (e-s+1) );
     return random;
 }
-
+*/
 /*
     @func generateTrafficLight
     @returns {string}
@@ -14,6 +14,21 @@ function generateRandomNumberFromRange( s, e ) {
     @example generateTrafficLight(); // 'red' or 'blue' or 'green'
 */
 
+const generateTrafficLight = function(){
+    let random = Math.floor(Math.random()*3)+1;
+    //console.log(random)
+if (random===1){
+    return'red' 
+} 
+else if (random === 2){
+    return'green';
+} else 
+        return'blue';
+    }
+    
+console.log(generateTrafficLight());
+
+
 /*
     @func generateRandomPhoneNumber
     @returns {string}
@@ -22,6 +37,13 @@ function generateRandomNumberFromRange( s, e ) {
             
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
+
+const generateRandomPhoneNumber = function(){
+    let randomNum = Math.floor(Math.random()*899+100);
+    let randomNum2= Math.floor(Math.random()*8999+1000);
+    return `1-718-${randomNum}-${randomNum2}`;
+}
+console.log(generateRandomPhoneNumber());
 
 /*
     @func generateRandomRGB
@@ -33,6 +55,14 @@ function generateRandomNumberFromRange( s, e ) {
     
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
+
+const generateRandomRGB = function(){
+    let r = Math.floor(Math.random()*226);
+    let g = Math.floor(Math.random()*226);
+    let b = Math.floor(Math.random()*226);
+    return `rgb(${r},${g},${b})`;
+}
+console.log(generateRandomRGB());
 
 /*
     @func generateLottoTicket
@@ -46,6 +76,13 @@ function generateRandomNumberFromRange( s, e ) {
     
     @example generateLottoTicket(); // L 9 11-28
 */
+const generateLottoTicket = function (){
+    let randNum1 = Math.floor(Math.random()*10);
+    let randNum2 = Math.floor(Math.random()*16);
+    let randNum3 = Math.floor(Math.random()*31)
+    return `L ${randNum1} ${randNum2}-${randNum3}`;
+}
+console.log(generateLottoTicket());
 
 /*
     @func generatePhoneNumberWithAreaCode
@@ -60,7 +97,19 @@ function generateRandomNumberFromRange( s, e ) {
     @example generatePhoneNumberWithAreaCode(); // "1-718-786-2825"
     @example generatePhoneNumberWithAreaCode( 646 ); // "1-646-786-2825"
 */
-
+const generatePhoneNumberWithAreaCode = function(num){
+    let areaCode = Math.floor(Math.random()*899+100);
+    let randPhoneNum1= Math.floor(Math.random()*899+100);
+    let randPhoneNum2=Math.floor(Math.random()*8999+1000);
+    if (typeof num === 'undefined'){
+        return `1-${areaCode}-${randPhoneNum1}-${randPhoneNum2}`;
+        
+    } else { (num); 
+    return `1-${num}-${randPhoneNum1}-${randPhoneNum2}`;
+    } 
+}
+console.log(generatePhoneNumberWithAreaCode(914));
+console.log(generatePhoneNumberWithAreaCode());
 
 /*
     @func generateTicketWithLetters
@@ -76,6 +125,15 @@ function generateRandomNumberFromRange( s, e ) {
             
         @example generateLottoTicket(); // L g M-28
 */
+
+const generateTicketWithLetters = function(){
+    let randNumb1 = Math.floor(Math.random()*10);
+    let randUppLett = String.fromCharCode(Math.floor(Math.random() * (91 - 65)) + 65);
+    let randLowLett = String.fromCharCode(Math.floor(Math.random() * (123 - 97)) + 97);
+    let randNumb2 = Math.floor(Math.random()*31);
+    return `L ${randNumb1} ${randLowLett} ${randUppLett}-${randNumb2}`;
+}
+console.log(generateTicketWithLetters());
 
 /*
     @func rockPaperScissors

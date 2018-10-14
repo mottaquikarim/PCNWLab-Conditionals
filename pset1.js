@@ -127,7 +127,7 @@ console.log(generateLottoTicket());
 const generatePhoneNumberWithAreaCode = num => Math.floor(Math.random()*10) + "-" + Math.floor(Math.random()*1000) + "-" + Math.floor(Math.random()*1000)
 
 console.log(generatePhoneNumberWithAreaCode());
-console.log(generatePhoneNumberWithAreaCode(646));
+//console.log(generatePhoneNumberWithAreaCode(646));
 
 /*
     @func generateTicketWithLetters
@@ -149,8 +149,7 @@ console.log(generatePhoneNumberWithAreaCode(646));
     return random;
 
    }
-   
-   console.log(String.fromCharCode(generateTicketWithLetters(65, 90)) + " " + (String.fromCharCode(generateTicketWithLetters(65, 90)).toLocaleLowerCase() + "-" + (Math.floor(Math.random() * 9))));
+   console.log(String.fromCharCode(generateTicketWithLetters(65, 90)) + " " + (String.fromCharCode(generateTicketWithLetters(65, 90)).toLocaleLowerCase() + "-" + (Math.floor(Math.random() * 30))));
    
 
 
@@ -174,6 +173,25 @@ console.log(generatePhoneNumberWithAreaCode(646));
     @example rockPaperScissors( "r" ); // -1
     @example rockPaperScissors(); // -1
 */
+function rockPaperScissors(player1, player2){
+    let rps = ' '; 
+      if(player1 === player2 ){
+          return 'Its a tie!' ; 
+        } else if (player1 === "rock" && player2 === "scissors") { 
+          return "player 1 wins" ;
+       } else if (player1 === "paper" && player2 === "rock"){
+           return "player1 wins"; 
+       } else if( player1 === "scissors" && player2 === "rock"){
+           return "player2 wins";
+       } else if(player1 === "rock" && player2 === "paper"){
+           return "player2 wins";
+       }else if (player1 === "paper" && player2 ==="scissors" ){
+           return "player2 wins";
+       } else if(player1 === "scissors" && player2 ==="rock" ){
+           return "player2 wins";
+       }           
+    } 
+console.log(rockPaperScissors("paper", "scissors"));
 
 /*
     @func RPSwithComputer
@@ -200,7 +218,7 @@ if (computerChoice < 0.34) {
     computerChoice = "scissors";
 }
 
-var compare = function(choice1, choice2) {
+let compare = function(choice1, choice2) {
     if(choice1 === choice2) {
     return "The result is a tie!";
 }
@@ -269,15 +287,15 @@ compare(userChoice, computerChoice);
     */
    function calculateGrade( grade ) {
     if ( grade >95 && grade <=100  ) {
-        return "A";
+        return "Your Grade is A";
     }else if (grade >=86 && grade <=94){
-        return "B";
+        return "Your Grade is B";
     } else if(grade <85 && grade >=75){
-        return "C";
+        return "Your Grade is C";
     }else if (grade >=74 && grade >=65){
-        return "D"; 
+        return "Your Grade is D"; 
     } else {
-        return "F";
+        return "Your Grade is F";
     }   
 } 
 console.log(calculateGrade(94));

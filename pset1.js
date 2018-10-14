@@ -3,7 +3,7 @@ function generateRandomNumberFromRange( s, e ) {
     return random;
 }
 
-/*
+/*  Problem 1:
     @func generateTrafficLight
     @returns {string}
     @desc - generates a random number from 1 to 3
@@ -14,7 +14,37 @@ function generateRandomNumberFromRange( s, e ) {
     @example generateTrafficLight(); // 'red' or 'blue' or 'green'
 */
 
-/*
+// SOLUTION:
+// const generateTrafficLight = (a,b) => {
+//     const random = a + Math.floor( Math.random() * (b-a+1) );
+//     if (random === 1){
+//         return 'red'
+//     }else if (random === 2){
+//         return 'green'
+//     } else if (random === 3){
+//         return "blue"}
+// }
+
+// console.log(generateTrafficLight2(1,3))
+
+//SHORTER WAY:
+// const generateTrafficLight2 = () => {
+//     let color = generateRandomNumberFromRange(1,3);
+
+//     if (color === 1){
+//         return 'red'
+//     }else if (color === 2){
+//         return 'green'
+//     } else if (color === 3){
+//         return "blue"}
+    
+// }
+
+// console.log(generateTrafficLight2())
+
+
+
+/*  Problem 2:
     @func generateRandomPhoneNumber
     @returns {string}
     @desc - generates a random phone number of the form
@@ -23,7 +53,28 @@ function generateRandomNumberFromRange( s, e ) {
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
 
-/*
+//SOLUTION:
+//LONG WAY:
+// const generateRandomPhoneNumber = () => {
+
+//     const  randomePhoneNumber1 = Math.floor(Math.random() * (999 - 100) + 100 )
+//     const  randomePhoneNumber2 = Math.floor(Math.random() * (999 - 100) + 100 )
+//     const  randomePhoneNumber3 = Math.floor(Math.random() * (9999 - 1000) + 1000 )
+
+//     return `1 - ${randomePhoneNumber1} - ${randomePhoneNumber2} - ${randomePhoneNumber3}`;   
+// }
+
+// console.log(generateRandomPhoneNumber())
+
+//SHORTER WAY:
+// const generateRandomPhoneNumber2 = () => {
+//     return `1-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(1000,9999)}`;
+// }
+
+// console.log(generateRandomPhoneNumber2());
+
+
+/*  Problem 3:
     @func generateRandomRGB
     @returns {string}
     @desc - generates a random rgb value
@@ -34,7 +85,14 @@ function generateRandomNumberFromRange( s, e ) {
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
 
-/*
+// SOLUTION:
+// const generateRandomRGB = () => {
+
+//     return `rgb(${generateRandomNumberFromRange(0,255)},${generateRandomNumberFromRange(0,255)},${generateRandomNumberFromRange(0,255)})`
+// }
+// console.log(generateRandomRGB())
+
+/*  Problem 4:
     @func generateLottoTicket
     @returns {string}
     @desc - generates a random lotto ticket with:
@@ -47,7 +105,21 @@ function generateRandomNumberFromRange( s, e ) {
     @example generateLottoTicket(); // L 9 11-28
 */
 
-/*
+//SOLUTION:
+//LONG WAY:
+// const generateLottoTicket = () => {
+
+//     return `L${generateRandomNumberFromRange(0,9)} ${generateRandomNumberFromRange(0,15)}-${generateRandomNumberFromRange(0,30)}`;
+// }
+
+// console.log(generateLottoTicket());
+
+// //SHORT WAY:
+// const generateLottoTicket2 = () =>  `L${generateRandomNumberFromRange(0,9)} ${generateRandomNumberFromRange(0,15)}-${generateRandomNumberFromRange(0,30)}`;
+// console.log(generateLottoTicket());
+
+
+/*  Problem 5:
     @func generatePhoneNumberWithAreaCode
     @param {number} areaCode
     @returns {string}
@@ -61,8 +133,16 @@ function generateRandomNumberFromRange( s, e ) {
     @example generatePhoneNumberWithAreaCode( 646 ); // "1-646-786-2825"
 */
 
+//SOLUTION:
+// const generatePhoneNumberWithAreaCode = (areaCode = generateRandomNumberFromRange(0,999)) => {
+    
+//     return `${areaCode}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(1000,9999)}`;
+// }
 
-/*
+// console.log(generatePhoneNumberWithAreaCode(100))
+
+
+/*  Problem 6:
     @func generateTicketWithLetters
     @returns {string}
     @desc - geneartes a random lotto ticket with:
@@ -76,6 +156,19 @@ function generateRandomNumberFromRange( s, e ) {
             
         @example generateLottoTicket(); // L g M-28
 */
+
+//SOLUTION:
+const generateTicketWithLetters = () => {
+    let randomNumber = generateRandomNumberFromRange();
+    let randomLetterUpperCase = String.fromCharCode(generateRandomNumberFromRange(65,90));
+    let randomLetterLowerCase = String.fromCharCode(generateRandomNumberFromRange(65,90)).toLowerCase()
+    
+    return `L [${randomLetterLowerCase}] [${randomLetterUpperCase}]-[${randomLetterUpperCase}]`
+}
+
+console.log(generateTicketWithLetters());
+
+console.log(String.fromCharCode(65,66,90).toLowerCase());
 
 /*
     @func rockPaperScissors
@@ -97,6 +190,21 @@ function generateRandomNumberFromRange( s, e ) {
     @example rockPaperScissors( "r" ); // -1
     @example rockPaperScissors(); // -1
 */
+
+//SOLUTION:
+const rockPaperScissors = (player1, player2) => {
+        console.log ('Rock! Paper! Scissors! SHOO!')
+
+        if (player1 === 'rock'){
+            return 'player1 won'
+        } else if (player1 === 'paper'){
+            return ''
+        } else if (player1 === 'scissors')
+
+    return (number)
+}
+
+console.log(rockPaperScissors());
 
 /*
     @func RPSwithComputer

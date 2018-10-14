@@ -52,8 +52,10 @@ console.log(generateRandomPhoneNumber())
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
 function generateRandomRGB(){
-    num =  generateRandomNumberFromRange(0,1000)
-    return `rgb(${num}-${num}-${num})`
+    num =  generateRandomNumberFromRange(0,255)
+    num2 =  generateRandomNumberFromRange(0,255)
+    num3 =  generateRandomNumberFromRange(0,255)
+    return `rgb(${num}-${num2}-${num3})`
 }
 
 console.log(generateRandomRGB())

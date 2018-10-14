@@ -216,7 +216,7 @@ console.log(RPSwithComputer('scissors'), 'Remember 1 = player 1 won; 2 = compute
 console.log(RPSwithComputer('rock'), 'Remember 1 = player 1 won; 2 = computer won; 0 = tie');
 console.log(RPSwithComputer('rock'), 'Remember 1 = player 1 won; 2 = computer won; 0 = tie');
 console.log(RPSwithComputer('scissors'), 'Remember 1 = player 1 won; 2 = computer won; 0 = tie');
-
+console.log('*********************************');
 /*
     @func calculateGrade
     @param {number} grade
@@ -251,8 +251,18 @@ function calculateGrade(grade){
             UPDATE grade = F
     */
     
-    if (grade > 90) {
-        return "A";
-    }
-   return "F"; // you may choose not to use this
+    if(grade >= 96 && !(grade > 100)) return "A";
+    else if(grade >= 86 && !(grade > 95)) return 'B';
+    else if(grade >= 76 && !(grade > 85)) return 'C';
+    else if(grade >= 66 && !(grade > 75)) return 'D';
+    return "F"; // you may choose not to use this
 } 
+
+console.log(calculateGrade(98), 'This should be A');
+console.log(calculateGrade(67), 'This should be D');
+console.log(calculateGrade(78), 'This should be C');
+console.log(calculateGrade(88), 'This should be B');
+console.log(calculateGrade(90), 'This should be B');
+console.log(calculateGrade(100), 'This should be A');
+console.log(calculateGrade(40), 'This should be F');
+console.log('*********************************');

@@ -18,7 +18,7 @@ function generateRandomNumberFromRange( s, e ) {
     return random;
 }
 
-function generateTrafficLight(color){
+const generateTrafficLight = (color) => {
     if (color === 1) {
         return 'red'
     } else if  (color === 2) {
@@ -38,7 +38,7 @@ function generateRandomNumberFromRange( s, e ) {
     const random = s + Math.floor( Math.random() * (e-s+1) );
     return random;
 }
-function randomNumber(){
+const randomNumber = () => {
     let secondNum = generateRandomNumberFromRange(0,9);
     let thirdNum = generateRandomNumberFromRange(0,9);
     let fourthNum = generateRandomNumberFromRange(0,9);
@@ -64,7 +64,7 @@ console.log(randomNumber());
     
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
-function generateRandomRGB(){
+const generateRandomRGB = () => {
     let r = generateRandomNumberFromRange(0,255);
     let g = generateRandomNumberFromRange(0,255);
     let b = generateRandomNumberFromRange(0,255);
@@ -83,7 +83,7 @@ console.log(generateRandomRGB());
     
     @example generateLottoTicket(); // L 9 11-28
 */
-function generateLottoTicket(){
+const generateLottoTicket = () => {
     let num1 = generateRandomNumberFromRange(0,9);
     let num2 = generateRandomNumberFromRange(0,15);
     let num3 = generateRandomNumberFromRange(0,30);
@@ -106,13 +106,13 @@ console.log(generateLottoTicket());
 function generateRandomNumberFromRange( s, e ) {
     const random = s + Math.floor( Math.random() * (e-s+1) );
     return random; }
-function randomCode() {
+const randomCode = () => {
         let code1 = generateRandomNumberFromRange(0,9);
         let code2 = generateRandomNumberFromRange(0,9);
         let code3 = generateRandomNumberFromRange(0,9);
         return `${code1}${code2}${code3}` }
 
-function generatePhoneNumberWithAreaCode(areaCode){
+const generatePhoneNumberWithAreaCode = (areaCode) => {
     if (typeof areaCode === 'number') {
         let num5 = generateRandomNumberFromRange(0,9);
         let num6 = generateRandomNumberFromRange(0,9);
@@ -155,7 +155,7 @@ function generateRandomNumberFromRange( s, e ) {
     const random = s + Math.floor( Math.random() * (e-s+1) );
     return random;
 }
-function generateTicketWithLetters(){
+const generateTicketWithLetters = () => {
     let numRand = generateRandomNumberFromRange(0,9);
     let lowerL = String.fromCharCode(generateRandomNumberFromRange(65,90)).toLowerCase();
     let randomU = String.fromCharCode(generateRandomNumberFromRange(65,90));
@@ -190,7 +190,7 @@ function generateRandomNumberFromRange( s, e ) {
     return random;
 }
 
-function rockPaperScissors(player1,player2) {
+const rockPaperScissors = (player1,player2) => {
 if (player1 === 'rock') {
     if (player2 === 'rock') {
         return 0; }
@@ -238,7 +238,7 @@ else if (player1 === 'paper') {
     @example rockPaperScissors(); // -1
 */
 
-function RPSwithComputer(player1) {
+const RPSwithComputer = (player1) => {
 const rPS = generateRandomNumberFromRange(1,3)
 let player2
 if (rPS === 1) {
@@ -296,7 +296,7 @@ console.log(RPSwithComputer('rock'))
     @example calculateGrade( "lol skool sucks" ); // Error
     
 */
-function calculateGrade(number){
+const calculateGrade = (number) => {
     if (number > 100 || number < 0) {
         return 'error';
     } else if (number >= 90) {
@@ -333,7 +333,7 @@ function calculateGrade( grade ) {
     }
    return "F"; // you may choose not to use this
    */
-function calculateGrade1(grade){
+const calculateGrade1 = (grade) => {
     if (grade >= 95){
         return grade = 'A';
     } else if (grade >= 85) {

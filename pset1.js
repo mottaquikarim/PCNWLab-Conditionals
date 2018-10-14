@@ -254,13 +254,13 @@ function calculateGrade(number){
         return 'A';
     } else if (number >= 80) {
         return 'B';
-    } else if (number >= 70) {
+    } else if (number >= 76) {
         return 'C';
     } else if (number >= 50) {
         return 'D';
     } else return 'F'
 }
-console.log(calculateGrade(71));
+console.log(calculateGrade(74));
 
 /*
 function calculateGrade( grade ) {
@@ -284,3 +284,16 @@ function calculateGrade( grade ) {
     }
    return "F"; // you may choose not to use this
    */
+function calculateGrade1(grade){
+    if (grade >= 95){
+        return grade = 'A';
+    } else if (grade >= 85) {
+        return grade = 'B'; 
+    } else if (grade >= 75) {
+        return grade = 'C'; 
+    } else if (grade >= 65) {
+        return grade ='D' 
+    } else return grade = 'F';
+    }
+
+console.log(calculateGrade1(74))

@@ -164,6 +164,38 @@ console.log(generateLottoTicket());
 */
 
 
+const generatePhoneNumberWithAreaCode = (areaCode) => {
+    let randomPhoneNum1 = generateRandomNumberFromRange(0, 999)
+    let randomPhoneNum2 = generateRandomNumberFromRange(0, 999)
+    let randomPhoneNum3 = generateRandomNumberFromRange (0, 9999)
+
+    if(areaCode === undefined){
+        areaCode = randomPhoneNum1
+    }
+
+    if (randomPhoneNum1 < 10){
+        randomPhoneNum1 = "00" + randomPhoneNum1
+     } else if (randomPhoneNum1 < 100){
+         randomPhoneNum1 = "0" + randomPhoneNum1 
+     };
+     
+    if (randomPhoneNum2 < 10) {
+        randomPhoneNum2 = "00" + randomPhoneNum2
+    } else if (randomPhoneNum2 < 100) {
+        randomPhoneNum2 = "0" + randomPhoneNum2
+    };
+    if (randomPhoneNum3 < 10) {
+        randomPhoneNum3 = "00" + randomPhoneNum3
+    } else if (randomPhoneNum3 < 100) {
+        randomPhoneNum3 = "0" + randomPhoneNum3
+    };
+
+
+    return `1-${areaCode}-${randomPhoneNum2}-${randomPhoneNum3}`
+
+
+}
+console.log(generatePhoneNumberWithAreaCode(718));
 /*
     @func generateTicketWithLetters
     @returns {string}

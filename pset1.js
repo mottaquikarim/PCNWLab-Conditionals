@@ -36,7 +36,7 @@ console.log(generateTrafficLight());
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
 const generateRandomPhoneNumber = () => {
-    let phonenumber = `${generateRandomNumberFromRange(1,1)}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(100,900)}-${generateRandomNumberFromRange(1000,9999)}`;
+    let phonenumber = `${generateRandomNumberFromRange(1,1)}-${generateRandomNumberFromRange(000,999)}-${generateRandomNumberFromRange(000,999)}-${generateRandomNumberFromRange(0000,9999)}`;
     return phonenumber;
 }
 console.log(generateRandomPhoneNumber());
@@ -87,7 +87,7 @@ console.log(generateLottoTicket());
 */
 const generatePhoneNumberWithAreaCode = (areacode) => {
 if (typeof areacode === 'undefined') {
-    let phonenumber = `${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(100,900)}-${generateRandomNumberFromRange(1000,9999)}`;
+    let phonenumber = `${generateRandomNumberFromRange(100 ,999)}-${generateRandomNumberFromRange(000,999)}-${generateRandomNumberFromRange(000,999)}-${generateRandomNumberFromRange(0000,9999)}`;
      return phonenumber;
 }
 else {
@@ -142,31 +142,56 @@ console.log(generateTicketWithLetter());
     @example rockPaperScissors( "r" ); // -1
     @example rockPaperScissors(); // -1
 */
+const AssignRockPaperOrScissorA = (a) => {
+let rock = 1;
+let paper =2;
+let scissors =3;
+ a === 'rock' ? a =rock: a === 'paper' ? a = paper: a === 'scissors' ? a = scissors: 'invalid input'; // assign player1 choice
+ return a;
+}
+
 const rockPaperScissors = (a,b) => { 
+
     let rock = 1;
     let paper =2;
     let scissors =3;
-    a == 'r' ? a =rock: a == 'p' ? a = paper: a == 's' ? a = scissors: 'invalid input'; // assign player1 choice
-    b == 'r' ? b =rock: b == 'p' ? b = paper: b == 's' ? b = scissors: 'invalid input'; // assign player2 choice
-    if (a == rock && b == scissors || a == paper && b == rock || a == scissors && b == paper) {
-console.log('Player1 Wins');
+     a = AssignRockPaperOrScissorA(a);
+     b = AssignRockPaperOrScissorA(b);
+
+    if (a === rock && b === scissors || a === paper && b == rock || a == scissors && b == paper) {
+// console.log('Player1 Wins'); // a = player 1
 return 1;
     }
     else if ( a == rock && b == paper || a == paper && b == scissors || a == scissors && b == rock){
-        console.log('Player2 Wins');
-        return 2;
+        //console.log('Player2 Wins'); 
+        return 2; // player2 wins b player 2;
     }
 
   else  if (a === b)// tie case
    {
-       console.log("It's a tie")
+       //console.log("It's a tie")
        return 0;
    }
 else if (a === 'invalid input' || b === 'invalid input') {
     console.log("Error, invalid input, please insert a number from 1,2,3");
 }
 }
-console.log(rockPaperScissors('r','s'))
+let gameresult = rockPaperScissors('rock','scissors');
+const decision = (gameresult) => {
+    if (gameresult === 1) {
+        console.log('Player 1 Wins');
+        return 1;
+    }
+    if (gameresult === 2) {
+        console.log('Player2 wins');
+        return 2
+    }
+    if (gameresult === 0) {
+        console.log('Its a tie');
+        return 0;
+    }
+}
+decision(gameresult);
 
 
 /*
@@ -183,34 +208,21 @@ console.log(rockPaperScissors('r','s'))
     @example rockPaperScissors( "rock" ); // 1, if player won
     @example rockPaperScissors( "rock" ); // 0, if tied
     @example rockPaperScissors(); // -1
-*/
-
-const RPSwithComputer = (a,b) => { 
-    let rock = 1;
-    let paper =2;
-    let scissors =3;
-    a == 1 ? a =rock: a == 2 ? a = paper: a == 3 ? a = scissors: 'invalid input'; // assign player choice
-    b == 'r' ? b =rock: b == 'p' ? b = paper: b == 'r' ? b = scissors: 'invalid input'; // assign computer choice
-    if (a == rock && b == scissors || a == paper && b == rock || a == scissors && b == paper) {
-console.log('You win');
-return 1;
-    }
-    else if ( a == rock && b == paper || a == paper && b == scissors || a == scissors && b == rock){
-        console.log('You lose!');
-        return 2;
-    }
-
-  else  if (a === b)// tie case
-   {
-       console.log("It's a tie")
-       return 0;
-   }
-else if (a === 'invalid input' || b === 'invalid input') {
-    console.log("Error, invalid input, please insert a number from 1,2,3");
+*/ 
+const RPSwithComputer = (player) => { 
+      let computerGame = rockPaperScissors(player,generateRandomNumberFromRange(1,3));
+      if (computerGame == 2) {
+          return 'Computer Won'
+      }
+      if (computerGame == 1) { 
+          return 'You Won';
+      }
+      if (computerGame == 0) { 
+          return 'Tie';
+      }
 }
+console.log(RPSwithComputer('rock'));
 
-}
-console.log(RPSwithComputer(generateRandomNumberFromRange(1,3),'r'));
 /*
     @func calculateGrade
     @param {number} grade

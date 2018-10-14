@@ -14,6 +14,19 @@ function generateRandomNumberFromRange( s, e ) {
     @example generateTrafficLight(); // 'red' or 'blue' or 'green'
 */
 
+const redLightGreenLight = () => {
+    random = generateRandomNumberFromRange(1,3)
+    if (random === 1) {
+        return "green"
+    } else if (random === 2) {
+        return "yellow"
+    } else {
+        return "red"
+    }
+}
+
+console.log(redLightGreenLight())
+
 /*
     @func generateRandomPhoneNumber
     @returns {string}
@@ -22,6 +35,13 @@ function generateRandomNumberFromRange( s, e ) {
             
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
+
+const phoneNum = () => {
+    phone2 = `${1}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}`
+    return phone2;
+}
+
+console.log(phoneNum())
 
 /*
     @func generateRandomRGB
@@ -33,6 +53,14 @@ function generateRandomNumberFromRange( s, e ) {
     
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
+
+const generateRandomRGB = () => {
+    red =  generateRandomNumberFromRange(0,255)
+    green = generateRandomNumberFromRange(0,255)
+    blue =  generateRandomNumberFromRange(0,255)
+    return `rgb(${red}, ${green}, ${blue})`
+    }
+    console.log(generateRandomRGB())
 
 /*
     @func generateLottoTicket
@@ -46,6 +74,15 @@ function generateRandomNumberFromRange( s, e ) {
     
     @example generateLottoTicket(); // L 9 11-28
 */
+
+const generateLottoTicket = () => {
+    firstNum = generateRandomNumberFromRange(0,9)
+    secondNum = generateRandomNumberFromRange(0,15)
+    thirdNum = generateRandomNumberFromRange(0,30)
+    return `L ${firstNum} ${secondNum} ${thirdNum}`
+}
+
+console.log(generateLottoTicket())
 
 /*
     @func generatePhoneNumberWithAreaCode
@@ -61,6 +98,18 @@ function generateRandomNumberFromRange( s, e ) {
     @example generatePhoneNumberWithAreaCode( 646 ); // "1-646-786-2825"
 */
 
+const phoneNum3 = (areaCode) => {
+    
+    if (typeof areaCode === typeof 0){
+        return `1-${areaCode}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}`; 
+    } else{
+        return `1-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}`;
+    }
+    
+}
+
+console.log(phoneNum3())
+console.log(phoneNum3(212))
 
 /*
     @func generateTicketWithLetters
@@ -76,6 +125,13 @@ function generateRandomNumberFromRange( s, e ) {
             
         @example generateLottoTicket(); // L g M-28
 */
+
+// A:65, Z:90
+const generateTicketWithLetters = () => {
+    return `${String.fromCharCode(generateRandomNumberFromRange(65, 90))} ${(String.fromCharCode(generateRandomNumberFromRange(65, 90)).toLowerCase())} ${String.fromCharCode(generateRandomNumberFromRange(65, 90))}-${generateRandomNumberFromRange(0, 30)}`
+}
+
+console.log(generateTicketWithLetters())
 
 /*
     @func rockPaperScissors
@@ -98,6 +154,31 @@ function generateRandomNumberFromRange( s, e ) {
     @example rockPaperScissors(); // -1
 */
 
+const rps = (player1, player2) => {
+    if (player1 === "rock" && player2 === "scissors"){
+        return 1
+    } else if (player1 === "paper" && player2 === "rock") {
+        return 1
+    } else if (player1 === "scissors" && player2 === "paper") {
+        return 1
+    } else if (player1 === "rock" && player2 === "paper") {
+        return 2
+    } else if (player1 === "paper" && player2 === "scissors") {
+        return 2
+    } else if (player1 === "scissors" && player2 === "rock") {
+        return 2
+    } else if (player1 === player2){
+        return 0
+    } else {
+        return -1
+    }
+}
+
+console.log(rps("rock", "paper"))
+console.log(rps("paper", "paper"))
+
+
+
 /*
     @func RPSwithComputer
     @param {string} player
@@ -113,6 +194,37 @@ function generateRandomNumberFromRange( s, e ) {
     @example rockPaperScissors( "rock" ); // 0, if tied
     @example rockPaperScissors(); // -1
 */
+
+const RPSwithComputer = (player) => {
+   computer = generateRandomNumberFromRange(1, 3)
+   if (computer === 1) {
+       computer = "rock"
+   } else if (computer === 2) {
+       computer = "paper"
+   } else if (computer === 3) {
+       computer = "scissors"
+   }
+   if (computer === "rock" && player === "scissors"){
+    return `${1} computer played rock`
+} else if (computer === "paper" && player === "rock") {
+    return `${1} computer played paper`
+} else if (computer === "scissors" && player === "paper") {
+    return `${1} computer played scissors`
+} else if (computer === "rock" && player === "paper") {
+    return `${2} computer played rock`
+} else if (computer === "paper" && player === "scissors") {
+    return `${2} computer played paper`
+} else if (computer === "scissors" && player === "rock") {
+    return `${2} computer played scissors`
+} else if (computer === player){
+    return `${0} computer played ${player}`
+} else {
+    return -1
+}
+}
+
+console.log(RPSwithComputer("scissors"))
+
 
 /*
     @func calculateGrade
@@ -132,7 +244,7 @@ function generateRandomNumberFromRange( s, e ) {
     
 */
 
-function calculateGrade( grade ) {
+function calculateGrade(grade) {
     // Write your codes below here
     /*
         assume that grade is the value the user input
@@ -148,8 +260,20 @@ function calculateGrade( grade ) {
             UPDATE grade = F
     */
     
-    if ( grade > 90 ) {
+    if ( grade <= 100 && grade > 95 ) {
         return "A";
+    } else if (grade <= 95 && grade > 85) {
+        return "B"
+    } else if (grade <= 85 && grade > 75) {
+        return "C"
+    } else if (grade <= 75 && grade > 65) {
+        return "D"
+    } else if (grade <= 65 && grade > 0) {
+        return "Ain't no F's just try again"; // you may choose not to use this
+    } else {
+        throw new Error ("Not an acceptable value")
     }
-   return "F"; // you may choose not to use this
 } 
+
+console.log(calculateGrade(67));
+console.log(calculateGrade(55));

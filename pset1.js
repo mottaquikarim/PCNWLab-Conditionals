@@ -230,6 +230,51 @@ else if (player1 === 'paper') {
     @example rockPaperScissors(); // -1
 */
 
+function RPSwithComputer(player1) {
+const rPS = generateRandomNumberFromRange(1,3)
+let player2
+if (rPS === 1) {
+    player2 = 'rock'; 
+} else if (rPS === 2) {
+    player2 = 'paper';
+} else if (rPS === 3) {
+    player2 = 'scissors'; 
+} 
+if (player1 === 'rock') {
+    if (player2 === 'rock') {
+        return 0; }
+        else if (player2 === 'paper'){
+            return 2; } 
+            else if (player2 === 'scissors') {
+                 return 1; }
+                 else return -1
+        }
+else if (player1 === 'scissors') {
+    if (player2 === 'scissors') {
+        return 0; 
+     } else if (player2 === 'rock') {
+         return 2;
+        } else if (player2 === 'paper') {
+            return 1; 
+        } else return -1; 
+    }
+else if (player1 === 'paper') {
+    if (player2 === 'paper') {
+        return 0; 
+    } else if (player2 === 'scissors') {
+        return 2; 
+    } else if (player2 === 'rock') {return 1;
+    }
+    } 
+    else return -1;
+}
+
+console.log(RPSwithComputer('rock'))
+
+
+
+
+
 /*
     @func calculateGrade
     @param {number} grade

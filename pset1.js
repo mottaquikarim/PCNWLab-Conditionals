@@ -64,7 +64,13 @@ console.log(randomNumber());
     
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
-
+function generateRandomRGB(){
+    let r = generateRandomNumberFromRange(0,255);
+    let g = generateRandomNumberFromRange(0,255);
+    let b = generateRandomNumberFromRange(0,255);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+console.log(generateRandomRGB());
 /*
     @func generateLottoTicket
     @returns {string}

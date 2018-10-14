@@ -2,6 +2,8 @@ function generateRandomNumberFromRange( s, e ) {
     const random = s + Math.floor( Math.random() * (e-s+1) );
     return random;
 }
+//  console.log(generateRandomNumberFromRange(0,10));
+//  console.log(Math.random());
 
 /*
     @func generateTrafficLight
@@ -13,6 +15,18 @@ function generateRandomNumberFromRange( s, e ) {
             
     @example generateTrafficLight(); // 'red' or 'blue' or 'green'
 */
+const generateTrafficLight = () => { 
+   const number = generateRandomNumberFromRange(1,3);
+    if( number === 1){
+    return 'red'
+    } 
+    else if( number === 2){
+    return 'green';
+    }
+    return 'blue';
+}
+console.log(generateTrafficLight());
+
 
 /*
     @func generateRandomPhoneNumber
@@ -22,7 +36,14 @@ function generateRandomNumberFromRange( s, e ) {
             
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
+const generateRandomPhoneNumber = () => {
+    const middleNumber = (generateRandomNumberFromRange(100,999));
+    const lastNumber = (generateRandomNumberFromRange(100,999));
+    const firstNumber = (generateRandomNumberFromRange(100,999));
+    return `1-${middleNumber}-${lastNumber}-${firstNumber}`
 
+}
+    console.log(generateRandomPhoneNumber());
 /*
     @func generateRandomRGB
     @returns {string}
@@ -33,6 +54,14 @@ function generateRandomNumberFromRange( s, e ) {
     
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
+const generateRandomRGB = () => {
+    const setOne = (generateRandomNumberFromRange(100, 999));
+    const setTwo = (generateRandomNumberFromRange(100, 999));
+    const setThree = (generateRandomNumberFromRange (0, 9));
+    return `rgb(${setOne},${setTwo},${setThree})`;
+
+}
+console.log(generateRandomRGB());
 
 /*
     @func generateLottoTicket
@@ -46,7 +75,14 @@ function generateRandomNumberFromRange( s, e ) {
     
     @example generateLottoTicket(); // L 9 11-28
 */
+const generateLottoTicket = () => {
+    const luckyNumber1 = (generateRandomNumberFromRange(0, 9));
+    const luckyNumber2 = (generateRandomNumberFromRange(0, 15));
+    const luckyNumber3 = (generateRandomNumberFromRange(0, 30));
+    return `L ${luckyNumber1} ${luckyNumber2}-${luckyNumber3}`;
+}
 
+console.log(generateLottoTicket());
 /*
     @func generatePhoneNumberWithAreaCode
     @param {number} areaCode

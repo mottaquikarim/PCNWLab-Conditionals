@@ -247,7 +247,22 @@ else if (player1 === 'paper') {
     @example calculateGrade( "lol skool sucks" ); // Error
     
 */
+function calculateGrade(number){
+    if (number > 100 || number < 0) {
+        return 'error';
+    } else if (number >= 90) {
+        return 'A';
+    } else if (number >= 80) {
+        return 'B';
+    } else if (number >= 70) {
+        return 'C';
+    } else if (number >= 50) {
+        return 'D';
+    } else return 'F'
+}
+console.log(calculateGrade(71));
 
+/*
 function calculateGrade( grade ) {
     // Write your codes below here
     /*
@@ -263,9 +278,9 @@ function calculateGrade( grade ) {
         if grade is between [65, 0]
             UPDATE grade = F
     */
-    
+    /*
     if ( grade > 90 ) {
         return "A";
     }
    return "F"; // you may choose not to use this
-} 
+   */

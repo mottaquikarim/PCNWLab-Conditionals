@@ -54,6 +54,14 @@ const generateRandomPhoneNumber = () => {
     
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
+const generateRandomRGB = () => {
+    const setOne = (generateRandomNumberFromRange(100, 999));
+    const setTwo = (generateRandomNumberFromRange(100, 999));
+    const setThree = (generateRandomNumberFromRange (0, 9));
+    return `rgb(${setOne},${setTwo},${setThree})`;
+
+}
+console.log(generateRandomRGB());
 
 /*
     @func generateLottoTicket

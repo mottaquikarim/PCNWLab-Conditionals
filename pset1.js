@@ -145,6 +145,25 @@ console.log(generatePhoneNumberWithAreaCode(212), "1-212-xxx-xxxx");
         @example generateLottoTicket(); // L g M-28
 */
 
+const generateTicketWithLetters = nada => {
+    const ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    const lowABC = ABC.toLowerCase();
+
+    let num1 = Math.floor(Math.random() * 26);
+    let num2 = Math.floor(Math.random() * 26);
+
+    let lowerLetter = lowABC[num1];
+    let upperLetter = ABC[num2];
+
+    let num3 = Math.floor(Math.random() * 31);
+    return `L ${lowerLetter} ${upperLetter}-${num3}`;
+}
+
+//test
+console.log(generateTicketWithLetters(), "L [a-z] [A-Z]-[0-30]");
+console.log(generateTicketWithLetters(), "L [a-z] [A-Z]-[0-30]");
+console.log(generateTicketWithLetters(), "L [a-z] [A-Z]-[0-30]");
+
 /*
     @func rockPaperScissors
     @param {string} player1

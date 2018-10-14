@@ -143,7 +143,20 @@ console.log(generatePhoneNumberWithAreaCode())
             
         @example generateLottoTicket(); // L g M-28
 */
+function generateRandomNumberFromRange( s, e ) {
+    const random = s + Math.floor( Math.random() * (e-s+1) );
+    return random;
+}
+function generateTicketWithLetters(){
+    let numRand = generateRandomNumberFromRange(0,9);
+    let lowerL = String.fromCharCode(generateRandomNumberFromRange(65,90)).toLowerCase();
+    let randomU = String.fromCharCode(generateRandomNumberFromRange(65,90));
+    let numRand1 = generateRandomNumberFromRange(0,9);
 
+    return `${numRand} ${lowerL} ${randomU}-${numRand1}`
+}
+
+console.log(generateTicketWithLetters());
 /*
     @func rockPaperScissors
     @param {string} player1

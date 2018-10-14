@@ -124,6 +124,17 @@ console.log('*********************************')
         @example generateLottoTicket(); // L g M-28
 */
 
+const generateTicketWithLetters = () => {
+
+    const randomLowerCasedLetter = String.fromCharCode(generateRandomNumberFromRange(65, 90)).toLowerCase();
+    const randomUpperCasedLetter = String.fromCharCode(generateRandomNumberFromRange(65, 90));
+    
+    return `L [${randomLowerCasedLetter}] [${randomUpperCasedLetter}] [${generateRandomNumberFromRange(0, 30)}]`;
+
+}
+
+console.log(generateTicketWithLetters());
+
 /*
     @func rockPaperScissors
     @param {string} player1

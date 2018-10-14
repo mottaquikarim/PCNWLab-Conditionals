@@ -75,7 +75,14 @@ console.log(generateRandomRGB());
     
     @example generateLottoTicket(); // L 9 11-28
 */
+const generateLottoTicket = () => {
+    const luckyNumber1 = (generateRandomNumberFromRange(0, 9));
+    const luckyNumber2 = (generateRandomNumberFromRange(0, 15));
+    const luckyNumber3 = (generateRandomNumberFromRange(0, 30));
+    return `L ${luckyNumber1} ${luckyNumber2}-${luckyNumber3}`;
+}
 
+console.log(generateLottoTicket());
 /*
     @func generatePhoneNumberWithAreaCode
     @param {number} areaCode

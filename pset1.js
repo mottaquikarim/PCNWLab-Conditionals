@@ -185,6 +185,38 @@ console.log(generateTicketWithLetters(), "L [a-z] [A-Z]-[0-30]");
     @example rockPaperScissors(); // -1
 */
 
+const rockPaperScissors = (player1choice, player2choice) => {
+    let num = 0;
+    ( player1choice === "rock" || player1choice === "paper" || player1choice === "scissors" ) ? num = 0 : num = -1;
+    ( player2choice === "rock" || player2choice === "paper" || player2choice === "scissors" ) ? num = 0 : num = -1;
+    if( num === -1 ){
+        return num;
+    } else if( player1choice === player2choice){
+        num = 0;
+    } else if( player1choice === "rock" && player2choice === "scissors" ){
+        num = 1;
+    } else if( player1choice === "paper" && player2choice === "rock" ){
+        num = 1;
+    } else if( player1choice === "scissors" && player2choice === "paper" ){
+        num = 1;
+    } else {
+        num = 2;
+    }
+    return num;
+}
+//test
+console.log(rockPaperScissors(), -1);
+console.log(rockPaperScissors("rock"), -1);
+console.log(rockPaperScissors("rock", "r"), -1);
+console.log(rockPaperScissors("r", "r"), -1);
+console.log(rockPaperScissors("r"), -1);
+console.log(rockPaperScissors("rock", "scissors"), 1);
+console.log(rockPaperScissors("paper", "rock"), 1);
+console.log(rockPaperScissors("rock", "paper"), 2);
+console.log(rockPaperScissors("scissors", "rock"), 2);
+console.log(rockPaperScissors("scissors", "scissors"), 0);
+console.log(rockPaperScissors("paper", "paper"), 0);
+
 /*
     @func RPSwithComputer
     @param {string} player

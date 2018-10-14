@@ -1,8 +1,8 @@
-/*unction generateRandomNumberFromRange( s, e ) {
+function generateRandomNumberFromRange( s, e ) {
     const random = s + Math.floor( Math.random() * (e-s+1) );
     return random;
 }
-*/
+
 /*
     @func generateTrafficLight
     @returns {string}
@@ -15,12 +15,12 @@
 */
 
 const generateTrafficLight = function(){
-    let random = Math.floor(Math.random()*3)+1;
-    //console.log(random)
-if (random===1){
+    let lightColor= generateRandomNumberFromRange(1,3)
+    //console.log(lightColor)
+if (lightColor===1){
     return'red' 
 } 
-else if (random === 2){
+else if (lightColor=== 2){
     return'green';
 } else 
         return'blue';
@@ -37,13 +37,29 @@ console.log(generateTrafficLight());
             
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
-
 const generateRandomPhoneNumber = function(){
     let randomNum = Math.floor(Math.random()*899+100);
     let randomNum2= Math.floor(Math.random()*8999+1000);
     return `1-718-${randomNum}-${randomNum2}`;
 }
 console.log(generateRandomPhoneNumber());
+
+
+/*const generateRandomPhoneNumber = function(){
+    let randomNum = generateRandomNumberFromRange( 0, 999 );
+    let randomNum2= generateRandomNumberFromRange( 0, 9999 );
+    
+    if (randomNum < 10 || randomNum2 < 10){
+        return `1-718-00${randomNum}-000${randomNum2}`
+    }else if (randomNum < 100 || randomNum2 < 100){
+        return `1-718-0${randomNum}-00${randomNum2}`
+    }else {
+        return `1-718-${randomNum}-${randomNum2}`;
+    }
+
+  }
+console.log(generateRandomPhoneNumber());
+*/
 
 /*
     @func generateRandomRGB
@@ -56,10 +72,19 @@ console.log(generateRandomPhoneNumber());
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
 
-const generateRandomRGB = function(){
+/*const generateRandomRGB = function(){
     let r = Math.floor(Math.random()*226);
     let g = Math.floor(Math.random()*226);
     let b = Math.floor(Math.random()*226);
+    return `rgb(${r},${g},${b})`;
+}
+console.log(generateRandomRGB());
+*/
+
+const generateRandomRGB = function(){
+    let r = generateRandomNumberFromRange( 0, 225 );
+    let g = generateRandomNumberFromRange( 0, 225 );
+    let b = generateRandomNumberFromRange( 0, 225 );
     return `rgb(${r},${g},${b})`;
 }
 console.log(generateRandomRGB());
@@ -101,7 +126,7 @@ const generatePhoneNumberWithAreaCode = function(num){
     let areaCode = Math.floor(Math.random()*899+100);
     let randPhoneNum1= Math.floor(Math.random()*899+100);
     let randPhoneNum2=Math.floor(Math.random()*8999+1000);
-    if (typeof num === 'undefined'){
+    if (typeof num === 'undefined'|| num < 100){
         return `1-${areaCode}-${randPhoneNum1}-${randPhoneNum2}`;
         
     } else { (num); 
@@ -156,6 +181,34 @@ console.log(generateTicketWithLetters());
     @example rockPaperScissors(); // -1
 */
 
+const rockPaperScissors = function (player1,player2){
+    const r= 'rock'
+    const p= 'paper'
+    const s= 'scissors'
+    let invalidInputP1 =(player1 !== r||player1 !==p||player1 !== s)
+    let invalidInputP2 =(player2 !== r||player2 !==p||player2!==s)
+    if (player1=== r && player2 === p){;
+    return 2
+
+    }else if (player1===r && player2 === s){
+        return 1
+    }else if (player1=== p && player2=== s){
+        return 2
+    }else if (player1===s && player2===r){
+        return 1
+    }else if (player1===player2){
+        return 0
+    }else if (invalidInputP1 || invalidInputP2)
+        return -1
+    
+
+}
+console.log(rockPaperScissors('rock','paper'));
+console.log(rockPaperScissors('rock','rock'));
+console.log(rockPaperScissors('i'));
+console.log(rockPaperScissors('rock','scissors'));
+
+
 /*
     @func RPSwithComputer
     @param {string} player
@@ -171,6 +224,47 @@ console.log(generateTicketWithLetters());
     @example rockPaperScissors( "rock" ); // 0, if tied
     @example rockPaperScissors(); // -1
 */
+console.log('---------------');
+
+let compChoice = function(){
+    const compOpt=generateRandomNumberFromRange(1,3);
+    if (compOpt === 1){
+    return "rock"
+
+    }else if(compOpt===2){
+        return "paper"
+    }else
+    return "scissors"
+}
+
+const rockPaperScissors2 = function (player1){
+let player3= compChoice()
+    let r= 'rock'
+    let p= 'paper'
+    let s= 'scissors'
+    let invalidInputP1 =(player1 !== r||player1 !==p||player1 !== s)
+    //let invalidInputP2 =(player2 !== r||player2 !==p||player2!==s)
+    if (player1=== r && player3=== p){;
+    return 2
+
+    }else if (player1===r && player3 === s){
+        return 1
+    }else if (player1=== p && player3=== s){
+        return 2
+    }else if (player1===s && player3=== r){
+        return 1
+    }else if (player1===player3){
+        return 0
+    }else if (invalidInputP1)
+        return -1
+    
+
+}
+console.log(rockPaperScissors2('rock'));
+console.log(rockPaperScissors2('rock'));
+console.log(rockPaperScissors2('i'));
+console.log(rockPaperScissors2('rock'));   
+
 
 /*
     @func calculateGrade

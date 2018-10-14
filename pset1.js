@@ -112,6 +112,23 @@ console.log(generateLottoTicket());
     @example generatePhoneNumberWithAreaCode( 646 ); // "1-646-786-2825"
 */
 
+const generatePhoneNumberWithAreaCode = areaCode => {
+    areaCode = typeof areaCode === 'number' ? areaCode : 718;
+    let a = Math.floor(Math.random() * 10);
+    let b = Math.floor(Math.random() * 10);
+    let c = Math.floor(Math.random() * 10);
+    let d = Math.floor(Math.random() * 10);
+    let e = Math.floor(Math.random() * 10);
+    let f = Math.floor(Math.random() * 10);
+    let g = Math.floor(Math.random() * 10);
+    return `1-${areaCode}-${a}${b}${c}-${d}${e}${f}${g}`;
+}
+
+//test
+console.log(generatePhoneNumberWithAreaCode(), "1-718-xxx-xxxx");
+console.log(generatePhoneNumberWithAreaCode("haha"), "1-718-xxx-xxxx"); 
+console.log(generatePhoneNumberWithAreaCode(646), "1-646-xxx-xxxx");
+console.log(generatePhoneNumberWithAreaCode(212), "1-212-xxx-xxxx");
 
 /*
     @func generateTicketWithLetters

@@ -211,7 +211,7 @@ console.log(rps("paper", "paper"))
 */
 
 const RPSwithComputer = (player) => {
-   computer = generateRandomNumberFromRange(1, 3)
+   let computer = generateRandomNumberFromRange(1, 3)
    if (computer === 1) {
        computer = "rock"
    } else if (computer === 2) {

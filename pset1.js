@@ -182,6 +182,8 @@ console.log(generateTicketWithLetters());
 */
 
 const rockPaperScissors = function (player1,player2){
+    //player1=toLowerCase();
+    //player2=toLowerCase();
     const r= 'rock'
     const p= 'paper'
     const s= 'scissors'
@@ -194,7 +196,11 @@ const rockPaperScissors = function (player1,player2){
         return 1
     }else if (player1=== p && player2=== s){
         return 2
+    }else if (player1=== p && player2=== r){
+        return 2
     }else if (player1===s && player2===r){
+        return 1
+    }else if (player1===s && player2===p){
         return 1
     }else if (player1===player2){
         return 0
@@ -203,8 +209,8 @@ const rockPaperScissors = function (player1,player2){
     
 
 }
-console.log(rockPaperScissors('rock','paper'));
-console.log(rockPaperScissors('rock','rock'));
+console.log(rockPaperScissors('paper','paper'));
+console.log(rockPaperScissors('scissors','rock'));
 console.log(rockPaperScissors('i'));
 console.log(rockPaperScissors('rock','scissors'));
 
@@ -226,44 +232,48 @@ console.log(rockPaperScissors('rock','scissors'));
 */
 console.log('---------------');
 
-let compChoice = function(){
+const compChoice = function(){
     const compOpt=generateRandomNumberFromRange(1,3);
     if (compOpt === 1){
     return "rock"
 
-    }else if(compOpt===2){
+    }if(compOpt===2){
         return "paper"
     }else
     return "scissors"
 }
 
-const rockPaperScissors2 = function (player1){
-let player3= compChoice()
-    let r= 'rock'
-    let p= 'paper'
-    let s= 'scissors'
-    let invalidInputP1 =(player1 !== r||player1 !==p||player1 !== s)
+const RPSwithComputer = function (playerA,playerB=compChoice()){
+    const r='rock'
+    const p='paper'
+    const s='scissors'
+   const invalidInputPA =(playerA !== r||playerA !==p||playerA !== s)
     //let invalidInputP2 =(player2 !== r||player2 !==p||player2!==s)
-    if (player1=== r && player3=== p){;
+    if (playerA=== r && playerB=== p){
     return 2
 
-    }else if (player1===r && player3 === s){
+    }else if (playerA===r && playerB === s){
         return 1
-    }else if (player1=== p && player3=== s){
+    }else if (playerA===p && playerB=== s){
         return 2
-    }else if (player1===s && player3=== r){
+    }else if (playerA===p && playerB=== r){
         return 1
-    }else if (player1===player3){
+    }else if (playerA===s && playerB=== p){
+        return 1
+    }else if (playerA===s && playerB=== r){
+            return 2
+    }else if (playerA===playerB){
         return 0
-    }else if (invalidInputP1)
+    }else (invalidInputPA)
         return -1
     
+     
 
 }
-console.log(rockPaperScissors2('rock'));
-console.log(rockPaperScissors2('rock'));
-console.log(rockPaperScissors2('i'));
-console.log(rockPaperScissors2('rock'));   
+console.log(RPSwithComputer('rock'));
+console.log(RPSwithComputer('paper'));
+console.log(RPSwithComputer('i'));
+console.log(RPSwithComputer('paper'));   
 
 
 /*

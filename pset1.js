@@ -96,11 +96,7 @@ console.log("Random Phone #:", generateRandomPhoneNumber1());
                   function from above
     
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
-     if (digits1 < 10) {
-        digits1 = "00" + digits1;
-    } else if (digits1 < 100) {
-        digits1 = "0" + digits1;
-    };
+  
 */
 
 const generateRandomRGB = () => {
@@ -125,7 +121,7 @@ const generateRandomRGB = () => {
     } else if (green < 100){
         green = "0" + green;
     }; 
-    
+
     return `rgb(${red},${blue},${green})`
 
 } 
@@ -144,6 +140,14 @@ console.log(generateRandomRGB());
     
     @example generateLottoTicket(); // L 9 11-28
 */
+
+const generateLottoTicket = () => {
+    let randomNum1 = generateRandomNumberFromRange(0, 9)
+    let randomNum2 = generateRandomNumberFromRange(0, 15)
+    let randomNum3 = generateRandomNumberFromRange(0, 30)
+    return `L ${randomNum1} ${randomNum2}-${randomNum3}`
+}
+console.log(generateLottoTicket());
 
 /*
     @func generatePhoneNumberWithAreaCode

@@ -13,7 +13,19 @@ function generateRandomNumberFromRange( s, e ) {
             
     @example generateTrafficLight(); // 'red' or 'blue' or 'green'
 */
+function generateRandomNumberFromRange( s, e ) {
+    const random = s + Math.floor( Math.random() * (e-s+1) );
+    return random;
+}
 
+function generateTrafficLight(color){
+    if (color === 1) {
+        return 'red'
+    } else if  (color === 2) {
+        return 'green'
+    } else return 'yellow'
+    }
+console.log(generateTrafficLight(generateRandomNumberFromRange(1,3)))
 /*
     @func generateRandomPhoneNumber
     @returns {string}

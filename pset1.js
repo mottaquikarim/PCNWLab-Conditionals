@@ -21,7 +21,7 @@ const generateTrafficLight = () => {
     } else if (light === 2) {
         return 'green';
     }
-    else if (light === 3) {
+    else {
         return 'blue';
     }
 }
@@ -35,9 +35,20 @@ console.log(generateTrafficLight());
             
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
+const pad = num => {
+    if (num < 10){
+        return '00'+ num;
+    }
+   else  if (num <100) {
+        return '0'+num;
+    }
+    return num;
+}
 const generateRandomPhoneNumber = () => {
-    let phonenumber = `${generateRandomNumberFromRange(1,1)}-${generateRandomNumberFromRange(000,999)}-${generateRandomNumberFromRange(000,999)}-${generateRandomNumberFromRange(0000,9999)}`;
-    return phonenumber;
+    let p1 = pad(generateRandomNumberFromRange(0,999));
+    let p2 = pad(generateRandomNumberFromRange(0,999));
+    let p3 = pad(generateRandomNumberFromRange(0,9999))
+    return `${p1}-${p2}-${p3}`;
 }
 console.log(generateRandomPhoneNumber());
 
@@ -87,11 +98,11 @@ console.log(generateLottoTicket());
 */
 const generatePhoneNumberWithAreaCode = (areacode) => {
 if (typeof areacode === 'undefined') {
-    let phonenumber = `${generateRandomNumberFromRange(100 ,999)}-${generateRandomNumberFromRange(000,999)}-${generateRandomNumberFromRange(000,999)}-${generateRandomNumberFromRange(0000,9999)}`;
+    let phonenumber = `${pad(generateRandomNumberFromRange(100 ,999))}-${pad(generateRandomNumberFromRange(000,999))}-${pad(generateRandomNumberFromRange(000,999))}-${pad(generateRandomNumberFromRange(0000,9999))}`;
      return phonenumber;
 }
 else {
-    let phonenumber = `${areacode}-${generateRandomNumberFromRange(100,999)}-${generateRandomNumberFromRange(100,900)}-${generateRandomNumberFromRange(1000,9999)}`;
+    let phonenumber = `${areacode}-${pad(generateRandomNumberFromRange(100,999))}-${pad(generateRandomNumberFromRange(100,900))}-${pad(generateRandomNumberFromRange(1000,9999))}`;
     return phonenumber;
 
 }

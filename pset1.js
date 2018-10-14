@@ -134,7 +134,7 @@ const generateTicketWithLetters = () => {
 }
 
 console.log(generateTicketWithLetters());
-
+console.log('*********************************')
 /*
     @func rockPaperScissors
     @param {string} player1
@@ -155,6 +155,29 @@ console.log(generateTicketWithLetters());
     @example rockPaperScissors( "r" ); // -1
     @example rockPaperScissors(); // -1
 */
+
+const rockPaperScissors = (player1, player2) => {
+    const lowerCasedPlayer1 = player1.toLowerCase();
+    const lowerCasedPlayer2 = player2.toLowerCase();
+    
+    if(lowerCasedPlayer1 === 'rock' && lowerCasedPlayer2 === 'paper') return 2;
+    else if(lowerCasedPlayer1 === 'paper' && lowerCasedPlayer2 === 'scissors') return 2;
+    else if(lowerCasedPlayer1 === 'scissors' && lowerCasedPlayer2 === 'rock') return 2;
+    else if(lowerCasedPlayer2 === 'rock' && lowerCasedPlayer1 === 'paper') return 1;
+    else if(lowerCasedPlayer2 === 'paper' && lowerCasedPlayer1 === 'scissors') return 1;
+    else if(lowerCasedPlayer2 === 'scissors' && lowerCasedPlayer1 === 'rock') return 1;
+    else if(lowerCasedPlayer1 === lowerCasedPlayer2) return 0;  
+    else return -1;
+}
+
+console.log(rockPaperScissors('rock', 'scissors'), 'This should be 1');
+console.log(rockPaperScissors('paper', 'scissors'), 'This should be 2');
+console.log(rockPaperScissors('rock', 'paper'), 'This should be 2');
+console.log(rockPaperScissors('scissors', 'paper'), 'This should be 1');
+console.log(rockPaperScissors('randomName', 'nonRelated'), 'This should be -1');
+console.log(rockPaperScissors('paper', 'paper'), 'This should be 0');
+console.log('*********************************');
+
 
 /*
     @func RPSwithComputer

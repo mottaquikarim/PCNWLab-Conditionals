@@ -76,15 +76,15 @@ function generateRandomNumberFromRange( s, e, ) {
     @example generateLottoTicket(); // L 9 11-28
 */
 
-function generateLottoTicket() {
-    let A = generateRandomNumberFromRange( 0, 9 );
-    let B = generateRandomNumberFromRange( 0, 15 );
-    let C = generateRandomNumberFromRange( 0, 30 );
+// function generateLottoTicket() {
+//     let A = generateRandomNumberFromRange( 0, 9 );
+//     let B = generateRandomNumberFromRange( 0, 15 );
+//     let C = generateRandomNumberFromRange( 0, 30 );
 
-    return `${A} ${B}-${C}`
-}
+//     return `${A} ${B}-${C}`
+// }
 
-console.log(generateLottoTicket())
+// console.log(generateLottoTicket())
 
 /*
     @func generatePhoneNumberWithAreaCode
@@ -99,6 +99,28 @@ console.log(generateLottoTicket())
     @example generatePhoneNumberWithAreaCode(); // "1-718-786-2825"
     @example generatePhoneNumberWithAreaCode( 646 ); // "1-646-786-2825"
 */
+
+// let dig1 = generateRandomNumberFromRange( 1, 9 );
+// let dig2 = generateRandomNumberFromRange( 1, 9 );
+// let dig3 = generateRandomNumberFromRange( 1, 9 );
+// let dig4 = generateRandomNumberFromRange( 1, 9 );
+// let dig5 = generateRandomNumberFromRange( 1, 9 );
+// let dig6 = generateRandomNumberFromRange( 1, 9 );
+// let dig7 = generateRandomNumberFromRange( 1, 9 );
+// let dig8 = generateRandomNumberFromRange( 1, 9 );
+// let dig9 = generateRandomNumberFromRange( 1, 9 );
+// let dig10 = generateRandomNumberFromRange( 1, 9 );
+
+
+// function generatePhoneNumberWithAreaCode(areaCode = `${dig1}${dig2}${dig3} -`) {
+//     if (areaCode === areaCode) {
+//     return `${areaCode} ${dig4}${dig5}${dig6} - ${dig7}${dig8}${dig9}${dig10}`
+//      } else { 
+//         return  `${dig4}${dig5}${dig6} - ${dig7}${dig8}${dig9}${dig10}`
+//     }
+// }
+
+// console.log(generatePhoneNumberWithAreaCode());
 
 
 /*
@@ -115,6 +137,15 @@ console.log(generateLottoTicket())
             
         @example generateLottoTicket(); // L g M-28
 */
+
+let A = generateRandomNumberFromRange(0, 9);
+let B = 
+let C = 
+let D = generateRandomNumberFromRange(0, 30);
+
+const generateTicketWithLetters = (A , B.toLowerCase(), C.toUpperCase(), D) => {
+
+}
 
 /*
     @func rockPaperScissors

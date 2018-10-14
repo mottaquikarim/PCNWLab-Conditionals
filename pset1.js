@@ -37,7 +37,17 @@ console.log(redLightGreenLight())
 */
 
 const phoneNum = () => {
-    phone2 = `${1}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}`
+    let number1 =generateRandomNumberFromRange(0,9)
+    let number2 =generateRandomNumberFromRange(0,9)
+    let number3 =generateRandomNumberFromRange(0,9)
+    let number4 =generateRandomNumberFromRange(0,9)
+    let number5 =generateRandomNumberFromRange(0,9)
+    let number6 =generateRandomNumberFromRange(0,9)
+    let number7 =generateRandomNumberFromRange(0,9)
+    let number8 =generateRandomNumberFromRange(0,9)
+    let number9 =generateRandomNumberFromRange(0,9)
+    let number10 =generateRandomNumberFromRange(0,9)
+    phone2 = `${1}-${number1}${number2}${number3}-${number4}${number5}${number6}-${number7}${number8}${number9}${number10}`
     return phone2;
 }
 
@@ -100,11 +110,18 @@ console.log(generateLottoTicket())
 
 const phoneNum3 = (areaCode) => {
     
-    if (typeof areaCode === typeof 0){
-        return `1-${areaCode}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}`; 
-    } else{
-        return `1-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}-${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}`;
+    let number4 =generateRandomNumberFromRange(0,9)
+    let number5 =generateRandomNumberFromRange(0,9)
+    let number6 =generateRandomNumberFromRange(0,9)
+    let number7 =generateRandomNumberFromRange(0,9)
+    let number8 =generateRandomNumberFromRange(0,9)
+    let number9 =generateRandomNumberFromRange(0,9)
+    let number10 =generateRandomNumberFromRange(0,9)
+    let first3 = `${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}${generateRandomNumberFromRange(0,9)}`
+    if (areaCode) {
+        return `1-${areaCode}-${number4}${number5}${number6}-${number7}${number8}${number9}${number10}`;
     }
+    return `1-${first3}-${number4}${number5}${number6}-${number7}${number8}${number9}${number10}`;
     
 }
 
@@ -127,9 +144,7 @@ console.log(phoneNum3(212))
 */
 
 // A:65, Z:90
-const generateTicketWithLetters = () => {
-    return `${String.fromCharCode(generateRandomNumberFromRange(65, 90))} ${(String.fromCharCode(generateRandomNumberFromRange(65, 90)).toLowerCase())} ${String.fromCharCode(generateRandomNumberFromRange(65, 90))}-${generateRandomNumberFromRange(0, 30)}`
-}
+const generateTicketWithLetters = () => `${String.fromCharCode(generateRandomNumberFromRange(65, 90))} ${(String.fromCharCode(generateRandomNumberFromRange(65, 90)).toLowerCase())} ${String.fromCharCode(generateRandomNumberFromRange(65, 90))}-${generateRandomNumberFromRange(0, 30)}`
 
 console.log(generateTicketWithLetters())
 
@@ -223,7 +238,7 @@ const RPSwithComputer = (player) => {
 }
 }
 
-console.log(RPSwithComputer("scissors"))
+console.log(RPSwithComputer("rock"))
 
 
 /*

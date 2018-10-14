@@ -203,7 +203,7 @@ const generateTicketWithLetters = () => {
     return `L ${randLower} ${randUpper}-${randNum30}`
 }
 console.log(generateTicketWithLetters());
-console.log(String.fromCharCode(60))
+console.log(String.fromCharCode(60));
 
 /*
     @func rockPaperScissors
@@ -271,14 +271,14 @@ const computerRPS = () => {
     }
 }
 
-console.log(rockPaperScissors('rock', 'rock'))
-console.log(rockPaperScissors('paper', 'rock'))
-console.log(rockPaperScissors('scissors', 'rock'))
-console.log('##########################')
-console.log(rockPaperScissors('blah', 'paper'))
-console.log(rockPaperScissors('paper', 'blah'))
-console.log(rockPaperScissors('scissors', computerRPS()))
-console.log(computerRPS())
+console.log(rockPaperScissors('rock', 'rock'));
+console.log(rockPaperScissors('paper', 'rock'));
+console.log(rockPaperScissors('scissors', 'rock'));
+console.log('##########################');
+console.log(rockPaperScissors('blah', 'paper'));
+console.log(rockPaperScissors('paper', 'blah'));
+console.log(rockPaperScissors('scissors', computerRPS()));
+console.log(computerRPS());
 
 /*
     @func RPSwithComputer
@@ -345,5 +345,5 @@ function calculateGrade( grade ) {
     }
 }
 
-console.log(calculateGrade(80))
-console.log(calculateGrade(generateRandomNumberFromRange(0,100)))
+console.log(calculateGrade(80));
+console.log(calculateGrade(generateRandomNumberFromRange(0,100)));

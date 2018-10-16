@@ -1,7 +1,9 @@
-function generateRandomNumberFromRange( s, e ) {
+
+function generateRandomNumberFromRange( s, e, ) {
     const random = s + Math.floor( Math.random() * (e-s+1) );
     return random;
 }
+
 
 /*
     @func generateTrafficLight
@@ -14,6 +16,51 @@ function generateRandomNumberFromRange( s, e ) {
     @example generateTrafficLight(); // 'red' or 'blue' or 'green'
 */
 
+// const generateTrafficLight = () => {
+
+ // **** Note use const to ensure your function does not crash if you use 1 = ****
+//   let random = generateRandomNumberFromRange( 1, 3 )
+
+//   if (random === 1) {
+
+//     return 'red' 
+
+//   } else if (random === 2) {
+
+//     return 'blue'
+
+//   } else if (random === 3) {
+
+//   return 'green'
+
+//   }
+
+// }
+//////////////////////////////////////////////////////
+
+// const generateTrafficLight = () => {
+
+ // **** Note use const to ensure your function does not crash if you use 1 = ****
+//   let random = generateRandomNumberFromRange( 1, 3 )
+
+//   if (random === 1) {
+
+//     return 'red' 
+
+//   } else if (random === 2) {
+
+//     return 'blue'
+
+//   } else if (random === 3) {
+
+//   return 'green'
+
+//   }
+
+// }
+
+// console.log(generateTrafficLight(2));
+
 /*
     @func generateRandomPhoneNumber
     @returns {string}
@@ -22,6 +69,21 @@ function generateRandomNumberFromRange( s, e ) {
             
     @example generateRandomPhoneNumber(); // "1-718-786-2825"
 */
+// function generateRandomPhoneNumber() {
+//     let number = generateRandomNumberFromRange(1 , 9)
+//     return `${1} - ${number}${number}${number} - ${number}${number}${number} - ${number}${number}${number}${number}`
+// }
+// console.log(generateRandomPhoneNumber());
+
+// const generateRandomPhoneNumber = () => {
+//     const p1 = generateRandomNumberFromRange(100, 999);
+//     const p2 = generateRandomNumberFromRange(100, 999);
+//     const p3 = generateRandomNumberFromRange(1000, 9999);
+// return `1-${p1}-${p2}-${p3}`
+// }
+
+// console.log(generateRandomPhoneNumber())
+// -----------------------------------------------------------------------------------------------------------------
 
 /*
     @func generateRandomRGB
@@ -33,6 +95,15 @@ function generateRandomNumberFromRange( s, e ) {
     
     @example generateRandomRGB(); // "rgb(255, 123, 0)"
 */
+
+// const generateRandomRGB = () => {
+//    let r = generateRandomNumberFromRange(1, 255);
+//    const g = generateRandomNumberFromRange(1, 123);
+//    let b = generateRandomNumberFromRange(1, 9);
+//     return `rgb  ${r},  ${g} , ${b}`
+// }
+
+// console.log(generateRandomRGB());
 
 /*
     @func generateLottoTicket
@@ -47,6 +118,16 @@ function generateRandomNumberFromRange( s, e ) {
     @example generateLottoTicket(); // L 9 11-28
 */
 
+// function generateLottoTicket() {
+//     let A = generateRandomNumberFromRange( 0, 9 );
+//     let B = generateRandomNumberFromRange( 0, 15 );
+//     let C = generateRandomNumberFromRange( 0, 30 );
+
+//     return `${A} ${B}-${C}`
+// }
+
+// console.log(generateLottoTicket())
+
 /*
     @func generatePhoneNumberWithAreaCode
     @param {number} areaCode
@@ -60,6 +141,28 @@ function generateRandomNumberFromRange( s, e ) {
     @example generatePhoneNumberWithAreaCode(); // "1-718-786-2825"
     @example generatePhoneNumberWithAreaCode( 646 ); // "1-646-786-2825"
 */
+
+// let dig1 = generateRandomNumberFromRange( 1, 9 );
+// let dig2 = generateRandomNumberFromRange( 1, 9 );
+// let dig3 = generateRandomNumberFromRange( 1, 9 );
+// let dig4 = generateRandomNumberFromRange( 1, 9 );
+// let dig5 = generateRandomNumberFromRange( 1, 9 );
+// let dig6 = generateRandomNumberFromRange( 1, 9 );
+// let dig7 = generateRandomNumberFromRange( 1, 9 );
+// let dig8 = generateRandomNumberFromRange( 1, 9 );
+// let dig9 = generateRandomNumberFromRange( 1, 9 );
+// let dig10 = generateRandomNumberFromRange( 1, 9 );
+
+
+// function generatePhoneNumberWithAreaCode(areaCode = `${dig1}${dig2}${dig3} -`) {
+//     if (areaCode === areaCode) {
+//     return `${areaCode} ${dig4}${dig5}${dig6} - ${dig7}${dig8}${dig9}${dig10}`
+//      } else { 
+//         return  `${dig4}${dig5}${dig6} - ${dig7}${dig8}${dig9}${dig10}`
+//     }
+// }
+
+// console.log(generatePhoneNumberWithAreaCode());
 
 
 /*
@@ -76,6 +179,16 @@ function generateRandomNumberFromRange( s, e ) {
             
         @example generateLottoTicket(); // L g M-28
 */
+
+// const generateTicketWithLetters = () => {
+// let A = generateRandomNumberFromRange(0, 9);
+// let B = String.fromCharCode(generateRandomNumberFromRange( 97, 122));
+// let C = String.fromCharCode(generateRandomNumberFromRange( 65, 90));
+// let D = generateRandomNumberFromRange(0, 30);
+// return `${A} ${B} ${C}-${D}`
+// }
+
+// console.log(generateTicketWithLetters());
 
 /*
     @func rockPaperScissors
@@ -98,6 +211,81 @@ function generateRandomNumberFromRange( s, e ) {
     @example rockPaperScissors(); // -1
 */
 
+
+
+// const rockPaperScissors = function(player1, player2) {
+//     // player1 wins
+//     if (player1 === 'rock' && player2 === 'scissors') {
+//     return  1 + '; ' + player1 + ' ' + 'wins';
+//     } else if (player1 === 'paper' && player2 === 'rock') { 
+//         return 1 + '; ' + player1 + ' ' + 'wins';
+//             } else if  (player1 === 'scissors' && player2 === 'paper') {
+//                 return 1 + '; ' + player1 + ' ' + 'wins';
+//                 // player 2 wins
+//     } else if (player1 === 'scissors' && player2 === 'rock') {
+//          return  2 + '; ' + player2 + ' ' + 'wins';
+//         } else if (player1 === 'rock' && player2 === 'paper') { 
+//             return 2 + '; ' + player2 + ' ' + 'wins';
+//             } else if  (player1 === 'paper' && player2 === 'scissors') {
+//                 return 2 + '; ' + player2 + ' ' + 'wins';
+//                 // ties
+//     } else if (player1 === 'scissors' && player2 === 'scissors') {
+//         return  'tie';
+//         } else if (player1 === 'rock' && player2 === 'rock') { 
+//             return 'tie';
+//             } else if  (player1 === 'paper' && player2 === 'paper') {
+//                  return 'tie';
+//                  // incorrect output
+//     } else if (player1 === 's' && player2 === 'r') {
+//         return  (- 1);
+//          } else if (player1 === 'r' && player2 === 'p') { 
+//             return (- 1);
+//              } else if  (player1 === 'p' && player2 === 's') {
+//                  return (- 1);
+//              } else 
+//              return ( - 1);
+// } 
+
+
+// console.log(rockPaperScissors());
+
+
+// ------------------second example rps ---------------------------
+
+
+// const rockPaperScissors = function(player1, player2) {
+//         // player1 wins
+//         if (player1 === 'rock' && player2 === 'scissors' 
+//         || player1 === 'paper' && player2 === 'rock'  
+//         || player1 === 'scissors' && player2 === 'paper') {
+//                     return 1 + '; ' + player1 + ' ' + 'wins';
+//             // player 2 wins
+//         } else if (player1 === 'scissors' && player2 === 'rock' 
+//         || player1 === 'rock' && player2 === 'paper'
+//         || player1 === 'paper' && player2 === 'scissors') {
+//                     return 2 + '; ' + player2 + ' ' + 'wins';
+//                     // ties
+//         } else if (player1 === 'scissors' && player2 === 'scissors'
+//         || player1 === 'rock' && player2 === 'rock'     
+//         || player1 === 'paper' && player2 === 'paper') {
+//         return 0 + '; ' + 'tie' 
+//                      // incorrect output
+//         } else if (player1 === 's' && player2 === 'r'
+//         || player1 === 'r' && player2 === 'p' 
+//         || player1 === 'p' && player2 === 's') {
+//                      return (- 1);
+//                  } else 
+//                  return ( - 1);
+//     } 
+
+//   console.log(rockPaperScissors( "rock", "paper" )); // 2
+//   console.log(rockPaperScissors( "rock", "scissors")); // 1
+//   console.log(rockPaperScissors( "rock", "rock" )); // 0
+//   console.log(rockPaperScissors( "r", "p" )); // -1
+//   console.log(rockPaperScissors( "r" )); // -1
+//   console.log(rockPaperScissors()); // -1
+
+
 /*
     @func RPSwithComputer
     @param {string} player
@@ -113,6 +301,58 @@ function generateRandomNumberFromRange( s, e ) {
     @example rockPaperScissors( "rock" ); // 0, if tied
     @example rockPaperScissors(); // -1
 */
+// //--------------------computer-----------------
+
+
+// const RPSwithComputer = () => {
+//     let randnum = generateRandomNumberFromRange(1, 3);
+//     if (randnum === 1) {
+//          return 'rock'
+//     } else if (randnum === 2){
+//         return 'paper'
+//     } else if (randnum === 3){
+//         return  'scissor'
+//     }    
+// }
+
+// console.log(RPSwithComputer())
+
+// // ----------------players result---------------------------------
+
+// const rockPaperScissors = function(player1) {
+//     // player1 wins
+//     const player2 = RPSwithComputer()
+//     if (player1 === 'rock' && player2 === 'scissors' 
+//     || player1 === 'paper' && player2 === 'rock'  
+//     || player1 === 'scissors' && player2 === 'paper') {
+//                 return 1 + '; ' + player2 + ' ' + 'wins';
+//         // player 2 wins
+//     } else if (player1 === 'scissors' && player2 === 'rock' 
+//     || player1 === 'rock' && player2 === 'paper'
+//     || player1 === 'paper' && player2 === 'scissors') {
+//                 return 2 + '; ' + player2 + ' ' + 'wins';
+//                 // ties
+//     } else if (player1 === 'scissors' && player2 === 'scissors'
+//     || player1 === 'rock' && player2 === 'rock'     
+//     || player1 === 'paper' && player2 === 'paper') {
+//     return 0 + '; ' + player2 + ' ' + 'tie' 
+//                  // incorrect output
+//     } else if (player1 === 's' && player2 === 'r'
+//     || player1 === 'r' && player2 === 'p' 
+//     || player1 === 'p' && player2 === 's') {
+//                  return (- 1);
+//             // } else 
+//            //  return ( - 1);
+//     }
+// }
+
+//   console.log(rockPaperScissors( "rock")); 
+//   console.log(rockPaperScissors( "rock")); 
+//   console.log(rockPaperScissors( "scissors"));
+//   console.log(rockPaperScissors( 'paper')); 
+//   console.log(rockPaperScissors( "paper" ));
+//   console.log(rockPaperScissors()); 
+//--------------------------------- why am i getting (-1) as a return -------------------------//
 
 /*
     @func calculateGrade
@@ -153,3 +393,24 @@ function calculateGrade( grade ) {
     }
    return "F"; // you may choose not to use this
 } 
+
+
+
+function calculateGrade( grade ) {
+    if ( grade >= 95 ) {
+        return "A";
+    } else if (grade >= 85) {
+   return "B"; 
+} else if (grade >= 75) {
+    return 'C'
+} else if (grade >= 65){
+    return 'D'
+}
+    return 'F'
+}
+
+console.log(calculateGrade( 98 ));
+console.log(calculateGrade( 90 ));
+console.log(calculateGrade( 83 ));
+console.log(calculateGrade( 72 ));
+console.log(calculateGrade( 64 ));

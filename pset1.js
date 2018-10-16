@@ -393,3 +393,24 @@ function calculateGrade( grade ) {
     }
    return "F"; // you may choose not to use this
 } 
+
+
+
+function calculateGrade( grade ) {
+    if ( grade >= 95 ) {
+        return "A";
+    } else if (grade >= 85) {
+   return "B"; 
+} else if (grade >= 75) {
+    return 'C'
+} else if (grade >= 65){
+    return 'D'
+}
+    return 'F'
+}
+
+console.log(calculateGrade( 98 ));
+console.log(calculateGrade( 90 ));
+console.log(calculateGrade( 83 ));
+console.log(calculateGrade( 72 ));
+console.log(calculateGrade( 64 ));

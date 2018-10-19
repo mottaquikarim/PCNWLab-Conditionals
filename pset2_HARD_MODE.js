@@ -340,14 +340,14 @@ console.log(`Is string ${"'    '"} empty? ${isEmptyString('    ')}`);
 */
 //problem 6
 const parseInt$ = (string) => {
-    // return string = Number(string);
+
     let num = 0;
     let exp = 0;
     for (i = string.length-1; i >= 0; i--){
         console.log(`**${num}**`)
         num += stringToNum(string.charAt(i)) * (10 ** exp)
         exp ++;
-        console.log(`**${num}**`)
+        console.log(`Math: Num -> (${num}) x (10 ** ${exp})`)
     } 
     return num
 }
@@ -393,9 +393,13 @@ const stringToNum = (char) => {
 
 
 
+console.log('*******sparseInt*******')
+console.log(`Typeof parseInt$('102'):  ${typeof parseInt$('102')}`);
 console.log('************')
-console.log(parseInt$('102'));
-console.log('************')
+console.log(`parseInt$('-5') returns: ${parseInt$('-5')}, of type: ${typeof parseInt$('-5')}`);
+console.log(`parseInt$('h7') returns: ${parseInt$('h7')}, of type: ${typeof parseInt$('h7')}`);
+console.log(`parseInt$('001') returns: ${parseInt$('001')}, of type: ${typeof parseInt$('001')}`);
+console.log(`parseInt$('001') returns: ${parseInt$('100')}, of type: ${typeof parseInt$('100')}`);
 
 
 
@@ -469,7 +473,7 @@ const validatePassword = (pw1, pw2) => {
     }
     return  'Passwords do not match';
 }
-
+/*
 console.log('Expected Errors:');
 console.log(`If passwords do not match: ${validatePassword('nnn','')}`);
 console.log(`
@@ -482,7 +486,7 @@ console.log(`
 If password does not contain an uppercase: ${validatePassword('!nnn123nnn', '!nnn123nnn')}`);
 console.log(`
 If password satisfies all conditions: ${validatePassword('!nNn123nnn', '!nNn123nnn')}`);
-
+*/
 
 /*
     @function validateEmailAddress

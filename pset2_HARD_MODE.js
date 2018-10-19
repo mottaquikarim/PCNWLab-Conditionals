@@ -48,11 +48,13 @@ const typeOfWhat = (param) => {
 
 //problem 1
 
-const coerceNum = (num) => {
+
+const coerceNum = function coerceNum(num) {
     num = parseInt(num, 10);
     num = Number(num);
     return num;
 };
+
 
 const ckWholeNum = num => num % 1 === 0 ? num : num -= num % 1;
 
@@ -336,6 +338,68 @@ console.log(`Is string ${"'    '"} empty? ${isEmptyString('    ')}`);
                         'f473' -> NaN
                         '5e4' -> 5000
 */
+//problem 6
+const parseInt$ = (string) => {
+    // return string = Number(string);
+    let num = 0;
+    let exp = 0;
+    for (i = string.length-1; i >= 0; i--){
+        console.log(`**${num}**`)
+        num += stringToNum(string.charAt(i)) * (10 ** exp)
+        exp ++;
+        console.log(`**${num}**`)
+    } 
+    return num
+}
+
+const stringToNum = (char) => {
+    switch (char) {
+        case '0':
+        return 0
+
+        case '1':
+        return 1
+
+        case '2':
+        return 2
+
+        case '3':
+        return 3
+
+        case '4':
+        return 4
+
+        case '5':
+        return 5
+
+        case '6':
+        return 6
+
+        case '7':
+        return 7
+
+        case '8':
+        return 8
+
+        case '9':
+        return 9
+
+        default:
+        return -0;
+    }
+}
+
+
+
+
+
+console.log('************')
+console.log(parseInt$('102'));
+console.log('************')
+
+
+
+
 
 /*
     @function validatePassword
@@ -350,6 +414,75 @@ console.log(`Is string ${"'    '"} empty? ${isEmptyString('    ')}`);
                     - both pw1 and pw2 has at least one special character (!@#$%^&*)
                     - both pw1 and pw2 has at least one uppercase character
 */
+
+
+
+// event = new InputEvent(typeArg, inputEventInit);
+// let aString = inputEvent.data
+console.log(`~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~`)
+const checkNum = (val) => {
+    let numCount = 0;
+    for (let i = 0; i < val.length; i++){
+        if (val[i].match(/[0-9]/)){
+            numCount += 1;
+        }
+    }
+    if( numCount >= 3){
+        return true
+    }
+    return false;
+}
+
+const checkSpcChar = (val) => {
+    let count = 0;
+    for (let i = 0; i < val.length; i++){
+        if (val[i].match(/\!|\`|\~|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\=|\_|\+|\\|\[|\]|\{|\}|\/|\?|\,|\.|\<|\>/)){
+            count += 1;
+        }
+    }
+    if( count >= 1){
+        return true
+    }
+    return false;
+}
+
+const validatePassword = (pw1, pw2) => {
+    if(pw1 === pw2){
+
+        if (pw1.length >= 8){
+
+            if (checkNum(pw1)){
+
+                if (checkSpcChar(pw1)){
+
+                    if(pw1 !== pw1.toLowerCase()){
+
+                        return 'Your passwords match!';
+                    }
+                    return 'Password require at least one uppercase';
+                }
+                return 'Password requires at least one special character';
+            }
+            return 'Password needs at least 3 numbers!';
+        }   
+        return 'Password too short!';
+    }
+    return  'Passwords do not match';
+}
+
+console.log('Expected Errors:');
+console.log(`If passwords do not match: ${validatePassword('nnn','')}`);
+console.log(`
+If password are not long enough: ${validatePassword('nnn', 'nnn')}`);
+console.log(`
+If password contains less than 3 numbers: ${validatePassword('nnn12nnn', 'nnn12nnn')}`);
+console.log(`
+If password does not contain any special character: ${validatePassword('nnn123nnn', 'nnn123nnn')}`);
+console.log(`
+If password does not contain an uppercase: ${validatePassword('!nnn123nnn', '!nnn123nnn')}`);
+console.log(`
+If password satisfies all conditions: ${validatePassword('!nNn123nnn', '!nNn123nnn')}`);
+
 
 /*
     @function validateEmailAddress

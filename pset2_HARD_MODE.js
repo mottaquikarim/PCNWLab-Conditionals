@@ -352,6 +352,7 @@ const parseInt$ = (string) => {
     return num
 }
 
+// Long function
 const stringToNum = (char) => {
     switch (char) {
         case '0':
@@ -450,6 +451,7 @@ const checkSpcChar = (val) => {
     return false;
 }
 
+//long function
 const validatePassword = (pw1, pw2) => {
     if(pw1 === pw2){
 
@@ -519,6 +521,93 @@ If password satisfies all conditions: ${validatePassword('!nNn123nnn', '!nNn123n
                         - .co
                         (...for now)
 */
+// console.log(`~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~`)
+//PROBLEM 8
+
+const countAlphaNum = function countAlphaNum(str) {    // returns how many alphanumeric char are in string 
+    let count = 0;                                     // [Aa - Zz] & [0-9]
+    for(let i = 0; i < str.length; i++){
+        if (str.charAt(i).match(/[A-Z]|[a-z]|[0-9]/)){
+            count += 1;
+        }
+        // console.log(`Count: ${count} i: ${i}`)  // checks char count at each index of i
+    }
+    return count;
+}
+
+// console.log(`~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~`)
+
+const containsIllegalEmailChar = function containsillegalEmailChar(str){ // checks if string contains illegal char
+    for(let i = 0; i < str.length; i++){                                 // ! - # % $ ^ & ( )
+        if((str[i].match(/ \! |\- |\# |\* |\% |\$ |\^ |\& |\( |\) /))){
+            return true;
+        }
+    }
+    return false;
+}
+
+// LARGE FUNCTION BELOW: WIP 2018/10/20
+const checkEmailAtandEnding = function checkEmailAtandEnding(str, firstTime = true, index = 0, count = 0){ 
+                                                // checks if string has a valid email ending 
+                                                // w/ one @ and a .com|.net|.co
+
+    if(firstTime){          // if first time will check for @
+        for(let i = 0; i < str.length; i++){
+            if(str.charAt(i) === '@'){
+                index = i;
+                count += 1;
+            }
+        }
+    }
+   
+    if (index != 0 && count === 1){
+        str = str.slice(index+1);      // will slice string after the @
+        console.log(`@t check passed & sliced current string: ${str}`)
+        for(let i = 0; i < str.length; i++){
+            if(str.charAt(i) === '.'){
+                index = i;
+                count += 1;
+            }
+        }
+    }
+
+    if (index != 0 && count === 2){   // checks for com | net | co
+        str = str.slice(index+1);     // future will at support for multiple dots in email
+        str = str.toLowerCase();
+        console.log(`Dot (.) check passed & sliced current string: ${str}`)
+        if(str === 'com' || str === 'net' || str === 'co'){
+            return true
+        }
+    }
+    return false;
+}
+
+// console.log(`~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~`)
+
+const validateEmailAddress = (string) => {
+    if (string.length === 0){ // makes sure something is entered 
+        return false;
+    }
+
+    if(isNaN(coerceNum(string.charAt(0)))){ // coerce first char of string, if NaN then proceed 
+        
+        if(countAlphaNum(string) >= 3){ // checks if first three characters are alpha numeric [Aa - Zz] || [0-9]
+
+            if(!containsIllegalEmailChar(string)){ // checks string for illegal characters
+                
+                if(checkEmailAtandEnding(string)){  // checks string for ONE @ and must contain ONE .com | .net | .co not case sensative
+                    return true
+                }
+            }
+        }
+    }
+    return false;
+}
+
+
+// console.log(`Something is entered into the parameter: ${validateEmailAddress()}`)
+console.log(`Is Email robert.abreu3@gmail.com valid: ${validateEmailAddress('robert.abreu3@gmail.com')}`)
+// console.log(`Email starts with at least 3 chars that are not special or numbers: ${validateEmailAddress('robert.abreu3@gmail.com')}`)
 
 /*
     @function truthTableEvaluator

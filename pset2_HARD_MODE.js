@@ -9,6 +9,24 @@
 */
 
 
+
+/*
+const typeOfWhat = (param) => {
+    switch (typeof param) {
+        case 'string':
+        return 'string'
+
+        case 
+
+    }
+
+    
+
+};
+*/
+
+
+
 /*
     @function compareInts
     @param firstNum {number} 
@@ -28,6 +46,50 @@
     @example compareInts( 1,2 ); // false
 */
 
+//problem 1
+
+
+const coerceNum = function coerceNum(num) {
+    num = parseInt(num, 10);
+    num = Number(num);
+    return num;
+};
+
+
+const ckWholeNum = num => num % 1 === 0 ? num : num -= num % 1;
+
+
+
+    // if(num % 1 === 0){
+    //     return num
+    // } else {
+    //     return num -= (num % 1)
+    // }
+
+
+
+
+
+ const compareInts = (num1, num2) => {
+    num1 = coerceNum(num1);
+    num2 = coerceNum(num2);
+    num1 = ckWholeNum(num1);
+    num2 = ckWholeNum(num2);
+
+    if (!isNaN(num1) && !isNaN(num2)){
+        if (num1 > num2){
+            return true;
+        } 
+        return false;
+    } 
+    return `Inputs must be numbers
+    Value 1: ${num1} 
+    Value 2: ${num2}`
+ }
+
+ console.log(compareInts(6,10)) //false
+
+//  console.log(compareInts(5, 'number'));
 /*
     @function signOfProduct
     @param term1 {number}
@@ -42,6 +104,31 @@
                     - if term1...term3 are not numbers, throw error
     @example signOfProduct(-5, 6, -4); // 1
 */
+
+//problem 2
+
+const signOfProduct = (term1, term2, term3) => {
+    term1 = coerceNum(term1);
+    term2 = coerceNum(term2);
+    term3 = coerceNum(term3);
+    
+    if ( !isNaN(term1) && !isNaN(term2) && !isNaN(term3) ) {
+        let prod = Math.sign(term1) + Math.sign(term2) + Math.sign(term3); 
+            if (prod === 3 || prod === -1){
+                return 1;
+            }
+            return -1;
+    } 
+    throw Error `Terms must be numbers`;
+}
+
+console.log(signOfProduct(5, 6, 4)); // 1
+// console.log(signOfProduct(-5, 6, 4)); // -1
+// console.log(signOfProduct(-5, 6, -4)); // 1
+// console.log(signOfProduct(-5, -6, -4)); // -1
+// console.log(signOfProduct(5, 6, 'string')); // error
+
+
 
 /*
     @function signOfProduct2
@@ -59,6 +146,27 @@
     @example signOfProduct(-5, 6, -4, true); // 120
 */
 
+//problem 3
+
+const signOfProduct2 = ( term1, term2, term3, shouldRetProd = false ) => {
+    if (shouldRetProd){
+    term1 = coerceNum(term1);
+    term2 = coerceNum(term2);
+    term3 = coerceNum(term3);
+        if ( !isNaN(term1) && !isNaN(term2) && !isNaN(term3) ){
+            return term1 * term2 * term3;
+         }
+    throw Error `Terms must be numbers`;
+    }
+
+return signOfProduct(term1, term2, term3);
+}
+
+console.log(signOfProduct2(5, 6, 4, true)); // 120
+// console.log(signOfProduct2(-5, 6, 4, true)); // -120
+// console.log(signOfProduct2(-5, 6, -4)); // 1
+// console.log(signOfProduct2(-5, -6, -4, true)); // -120
+
 /*
     @function anyUpperCase
     @param term {string}
@@ -72,6 +180,115 @@
     @example anyUpperCase('teSt'); // true
 */
 
+//problem 4
+
+const anyUpperCase = (string) => {
+    if (string.match(/[A-Z]/g)){
+        return true;
+    }
+    return false;
+}
+console.log(anyUpperCase('robert')) // false
+console.log(anyUpperCase('roBert')) // true
+
+
+/*
+const letterIsCapital = (str) => {
+    if (str === 'A' || str === 'B'||str === 'C'||str === 'D'||str === 'E'||str === 'F'||str === 'G'||str === 'H'||str === 'I'||str === 'J'||str === 'K'||str === 'L'||str === 'M'||str === 'N'||str === 'O'||str === 'P'||str === 'Q'||str === 'R'||str === 'S'||str === 'T'||str === 'U'||str === 'V'||str === 'W'||str === 'X'||str === 'Y'||str === 'Z'){
+       return true; 
+    }
+    return false;
+}
+*/
+/*
+
+const sliceMeDaddy = (string, length, index) => {
+    console.log(string.charAt(index));
+    console.log(`sliceMeDaddy Called String: ${string} Length: ${length} index ${index}`)
+
+        if (letterIsCapital(string.charAt(index))){
+            anyUpperCase(string, -3, index);
+        }else {
+        anyUpperCase(string, length-1, index+1)
+        }
+}
+
+const anyUpperCase = (string, strLngth = -2, index = 0) => {
+    console.log(`UpperCase Called String: ${string} Length: ${strLngth} index ${index}`)
+    // let counter = strLngth;
+    // let index = ind;
+    if (strLngth === -2) {
+        sliceMeDaddy(string, string.length-1, index)
+    } 
+    else if (strLngth === -3) {
+        return true
+    }
+    else if (strLngth === -1){
+        return false
+    }
+    else if (strLngth > -1){
+    sliceMeDaddy(string, strLngth, index);
+    }
+    return false;
+    
+}
+*/
+/*
+const sliceMeDaddy = (string, length) => {
+    console.log(`sliceMeDaddy Called String: ${string} Length: ${length}`)
+    console.log(string.charAt(length));
+
+        if (letterIsCapital(string.charAt(length))){
+            anyUpperCase(string, -3, length);
+        }else {
+        anyUpperCase(string, length-1)
+        }
+}
+
+const anyUpperCase = (string, length = -2) => {
+    console.log(`UpperCase Called String: ${string} Length: ${length}`)
+    // let counter = strLngth;
+    // let index = ind;
+    if (length === -2) {
+        sliceMeDaddy(string, string.length-1)
+    } 
+    else if (length === -3) {
+        return true
+    }
+    else if (length === -1){
+        return false
+    }
+    else if (length > -1){
+    sliceMeDaddy(string, length);
+    }
+    return false;
+
+}
+*/
+
+
+
+
+
+//  console.log(anyUpperCase('teSt')); // true
+//  console.log(anyUpperCase('rObert'));
+
+
+
+
+ /*
+ function pow(x, n) {
+    if (n == 1) {
+      return x;
+    } else {
+        console.log(x);
+      return x * pow(x, n - 1);
+    }
+  }
+  
+  console.log( pow(2, 3));
+*/
+
 /*
     @function isEmptyString
     @param term {string}
@@ -83,6 +300,17 @@
                     - '    ', you get the point
                     CHALLENGE: you don't need to use any sort of loops for this
 */
+//problem 5
+const isEmptyString = (string) => {
+    string = string.replace(/ /g, '');
+    if (string !== ''){
+        return false;
+    }
+    return true;
+}
+
+console.log(`Is string ${"'robert'"} empty? ${isEmptyString('robert')}`);
+console.log(`Is string ${"'    '"} empty? ${isEmptyString('    ')}`);
 
 /*
     @function parseInt
@@ -110,6 +338,73 @@
                         'f473' -> NaN
                         '5e4' -> 5000
 */
+//problem 6
+const parseInt$ = (string) => {
+
+    let num = 0;
+    let exp = 0;
+    for (i = string.length-1; i >= 0; i--){
+        console.log(`**${num}**`)
+        num += stringToNum(string.charAt(i)) * (10 ** exp)
+        exp ++;
+        console.log(`Math: Num -> (${num}) x (10 ** ${exp})`)
+    } 
+    return num
+}
+
+// Long function
+const stringToNum = (char) => {
+    switch (char) {
+        case '0':
+        return 0
+
+        case '1':
+        return 1
+
+        case '2':
+        return 2
+
+        case '3':
+        return 3
+
+        case '4':
+        return 4
+
+        case '5':
+        return 5
+
+        case '6':
+        return 6
+
+        case '7':
+        return 7
+
+        case '8':
+        return 8
+
+        case '9':
+        return 9
+
+        default:
+        return -0;
+    }
+}
+
+
+
+
+
+console.log('*******sparseInt*******')
+console.log(`Typeof parseInt$('102'):  ${typeof parseInt$('102')}`);
+console.log('************')
+console.log(`parseInt$('-5') returns: ${parseInt$('-5')}, of type: ${typeof parseInt$('-5')}`);
+console.log(`parseInt$('h7') returns: ${parseInt$('h7')}, of type: ${typeof parseInt$('h7')}`);
+console.log(`parseInt$('001') returns: ${parseInt$('001')}, of type: ${typeof parseInt$('001')}`);
+console.log(`parseInt$('001') returns: ${parseInt$('100')}, of type: ${typeof parseInt$('100')}`);
+
+
+
+
 
 /*
     @function validatePassword
@@ -123,6 +418,76 @@
                     - both pw1 and pw2 has at least 3 numbers
                     - both pw1 and pw2 has at least one special character (!@#$%^&*)
                     - both pw1 and pw2 has at least one uppercase character
+*/
+
+
+
+// event = new InputEvent(typeArg, inputEventInit);
+// let aString = inputEvent.data
+console.log(`~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~`)
+const checkNum = (val) => {
+    let numCount = 0;
+    for (let i = 0; i < val.length; i++){
+        if (val[i].match(/[0-9]/)){
+            numCount += 1;
+        }
+    }
+    if( numCount >= 3){
+        return true
+    }
+    return false;
+}
+
+const checkSpcChar = (val) => {
+    let count = 0;
+    for (let i = 0; i < val.length; i++){
+        if (val[i].match(/\!|\`|\~|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\=|\_|\+|\\|\[|\]|\{|\}|\/|\?|\,|\.|\<|\>/)){
+            count += 1;
+        }
+    }
+    if( count >= 1){
+        return true
+    }
+    return false;
+}
+
+//long function
+const validatePassword = (pw1, pw2) => {
+    if(pw1 === pw2){
+
+        if (pw1.length >= 8){
+
+            if (checkNum(pw1)){
+
+                if (checkSpcChar(pw1)){
+
+                    if(pw1 !== pw1.toLowerCase()){
+
+                        return 'Your passwords match!';
+                    }
+                    return 'Password require at least one uppercase';
+                }
+                return 'Password requires at least one special character';
+            }
+            return 'Password needs at least 3 numbers!';
+        }   
+        return 'Password too short!';
+    }
+    return  'Passwords do not match';
+}
+/*
+console.log('Expected Errors:');
+console.log(`If passwords do not match: ${validatePassword('nnn','')}`);
+console.log(`
+If password are not long enough: ${validatePassword('nnn', 'nnn')}`);
+console.log(`
+If password contains less than 3 numbers: ${validatePassword('nnn12nnn', 'nnn12nnn')}`);
+console.log(`
+If password does not contain any special character: ${validatePassword('nnn123nnn', 'nnn123nnn')}`);
+console.log(`
+If password does not contain an uppercase: ${validatePassword('!nnn123nnn', '!nnn123nnn')}`);
+console.log(`
+If password satisfies all conditions: ${validatePassword('!nNn123nnn', '!nNn123nnn')}`);
 */
 
 /*
@@ -156,6 +521,93 @@
                         - .co
                         (...for now)
 */
+// console.log(`~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~`)
+//PROBLEM 8
+
+const countAlphaNum = function countAlphaNum(str) {    // returns how many alphanumeric char are in string 
+    let count = 0;                                     // [Aa - Zz] & [0-9]
+    for(let i = 0; i < str.length; i++){
+        if (str.charAt(i).match(/[A-Z]|[a-z]|[0-9]/)){
+            count += 1;
+        }
+        // console.log(`Count: ${count} i: ${i}`)  // checks char count at each index of i
+    }
+    return count;
+}
+
+// console.log(`~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~`)
+
+const containsIllegalEmailChar = function containsillegalEmailChar(str){ // checks if string contains illegal char
+    for(let i = 0; i < str.length; i++){                                 // ! - # % $ ^ & ( )
+        if((str[i].match(/ \! |\- |\# |\* |\% |\$ |\^ |\& |\( |\) /))){
+            return true;
+        }
+    }
+    return false;
+}
+
+// LARGE FUNCTION BELOW: WIP 2018/10/20
+const checkEmailAtandEnding = function checkEmailAtandEnding(str, firstTime = true, index = 0, count = 0){ 
+                                                // checks if string has a valid email ending 
+                                                // w/ one @ and a .com|.net|.co
+
+    if(firstTime){          // if first time will check for @
+        for(let i = 0; i < str.length; i++){
+            if(str.charAt(i) === '@'){
+                index = i;
+                count += 1;
+            }
+        }
+    }
+   
+    if (index != 0 && count === 1){
+        str = str.slice(index+1);      // will slice string after the @
+        console.log(`@t check passed & sliced current string: ${str}`)
+        for(let i = 0; i < str.length; i++){
+            if(str.charAt(i) === '.'){
+                index = i;
+                count += 1;
+            }
+        }
+    }
+
+    if (index != 0 && count === 2){   // checks for com | net | co
+        str = str.slice(index+1);     // future will at support for multiple dots in email
+        str = str.toLowerCase();
+        console.log(`Dot (.) check passed & sliced current string: ${str}`)
+        if(str === 'com' || str === 'net' || str === 'co'){
+            return true
+        }
+    }
+    return false;
+}
+
+// console.log(`~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~`)
+
+const validateEmailAddress = (string) => {
+    if (string.length === 0){ // makes sure something is entered 
+        return false;
+    }
+
+    if(isNaN(coerceNum(string.charAt(0)))){ // coerce first char of string, if NaN then proceed 
+        
+        if(countAlphaNum(string) >= 3){ // checks if first three characters are alpha numeric [Aa - Zz] || [0-9]
+
+            if(!containsIllegalEmailChar(string)){ // checks string for illegal characters
+                
+                if(checkEmailAtandEnding(string)){  // checks string for ONE @ and must contain ONE .com | .net | .co not case sensative
+                    return true
+                }
+            }
+        }
+    }
+    return false;
+}
+
+
+// console.log(`Something is entered into the parameter: ${validateEmailAddress()}`)
+console.log(`Is Email robert.abreu3@gmail.com valid: ${validateEmailAddress('robert.abreu3@gmail.com')}`)
+// console.log(`Email starts with at least 3 chars that are not special or numbers: ${validateEmailAddress('robert.abreu3@gmail.com')}`)
 
 /*
     @function truthTableEvaluator

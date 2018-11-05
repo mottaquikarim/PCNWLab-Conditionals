@@ -27,6 +27,91 @@
                         in seperate functions that are invoked
     @example compareInts( 1,2 ); // false
 */
+const compareInts = (firstNum, secondNum) => {
+if (typeof firstNum !== 'number' || typeof secondNum !== 'number' ) {
+    firstNum = 1;
+    secondNum = 0;
+}
+if (firstNum !== Math.floor(firstNum) || secondNum !== Math.floor(secondNum)){
+    firstNum = Math.floor(firstNum);
+    secondNum = Math.floor(secondNum);
+}
+if (firstNum > secondNum) {
+    return true;
+}
+return false;
+}
+
+console.log(compareInts(1,2));
+console.log(compareInts("hola","hola"));
+console.log(compareInts(1.55,0.75));
+console.log(compareInts(1.55,3.75));
+
+
+
+/*const isNumAnInt = (value) => {
+if (Number.isInteger(value)) {
+    return `${value} is a Whole Number`;
+    }
+    else return `${value} is not a Whole Number`;
+}
+console.log(isNumAnIt());
+
+const getWholeNum = (num) => {
+    return Math.floor(num);
+}
+console.log(getWholeNum());
+
+const compareInts = (firstNum, secondNum) => {
+    if (Number.isInteger(firstNum / secondNum) {
+        if (firstNum > secondNum) {
+            return true;
+    }
+}
+    else return false;
+    getWholeNum(num);
+}*/
+/*const compareInts = (val1, val2) => {
+    let valu1 = getWholeNum();
+    let valu2 = getWholeNum2();
+    if (val1 > val2) {
+    return true;
+    }
+    else return false;
+}
+
+const getWholeNum = (value1) => {
+    if (itItANumber1() ===`${value1} is not a Whole Number`) {
+        return Math.floor(value1); 
+    }
+    else return value1;
+
+const getWholeNum2 = (value2) => {
+    if (itItANumber2() ===`${value2} is not a Whole Number`) {
+        return Math.floor(value2); 
+}  else return value2;
+
+getWholeNum();
+getWholeNum2();
+
+get
+     const isNumAnInt1 = (value1) => {
+        if (Number.isInteger(value1)) {
+        return `${value1} is a Whole Number`;
+        }
+        else return `${value1} is not a Whole Number`;
+    }
+    isNumAnInt1();
+
+    const isNumAnInt2 = (value2) => {
+        if (Number.isInteger(value2)) {
+        return `${value2} is a Whole Number`;
+        }
+        else return `${value2} is not a Whole Number`;
+    }
+        isItANumber2();
+
+console.log(compareInts(1.111, 2.222));*/
 
 /*
     @function signOfProduct
@@ -42,7 +127,33 @@
                     - if term1...term3 are not numbers, throw error
     @example signOfProduct(-5, 6, -4); // 1
 */
+const signOfProduct = (term1, term2, term3) => {
+    let total = 0
+    if (typeof term1 !== 'number' ||typeof term2 !== 'number' || typeof term3 !== 'number'  ){
+        throw new Error('terms must be numbers')
+    }
+    if (term1 < 0) {
+        total += 1;
+    }
+    if(term2 < 0) {
+        total += 1;
+    }
+    if(term3 < 0) {
+        total += 1;
+    }
+    if (total === 3) {
+        return -1;
+    }
+    else if (total === 2) {
+        return 1
+    }
+    else if (total === 1){
+        return -1;
+    }
+    return 1; 
+}
 
+console.log(signOfProduct(-5, 6, -4));
 /*
     @function signOfProduct2
     @param term1 {number}
@@ -58,7 +169,47 @@
                  in this instance)
     @example signOfProduct(-5, 6, -4, true); // 120
 */
+const signOfProduct2 = (term1, term2, term3, shouldRetProd = false) => {
+    let total = 0
+    if (typeof term1 !== 'number' ||typeof term2 !== 'number' || typeof term3 !== 'number'  ){
+        throw new Error('terms must be numbers')
+    }
+    if (term1 < 0) {
+        total += 1;
+    }
+    if(term2 < 0) {
+        total += 1;
+    }
+    if(term3 < 0) {
+        total += 1;
+    }
+    if (total === 3 && shouldRetProd === false) {
+        return -1;
+    }
+    else if (total === 3 && shouldRetProd === true){
+        return term1 * term2 * term3;
+    }
+    if (total === 2 && shouldRetProd === false) {
+        return 1
+    }
+    else if (total === 2 && shouldRetProd === true){
+        return term1 * term2 * term3;
+    }
+     if (total === 1 && shouldRetProd === false){
+        return -1;
+    }
+    else if (total === 1 && shouldRetProd === true){
+        return term1 * term2 * term3;
+    }
+    if (total === 0 && shouldRetProd === false) {
+        return 1;
+    }
+    else if (total === 0 && shouldRetProd === true){
+        return term1 * term2 * term3;
+    } 
+}
 
+console.log(signOfProduct2(-5, 6, -4, true));
 /*
     @function anyUpperCase
     @param term {string}
@@ -71,6 +222,18 @@
                         some string methods (hint, look up string methods)
     @example anyUpperCase('teSt'); // true
 */
+const anyUpperCase = (term) => {
+    const upper = /[A-Z]/g;
+    const value = term.search(upper);
+
+    if (value > 0) {
+        return true;
+    }
+    return false;
+}
+console.log(anyUpperCase('teSt'));
+console.log(anyUpperCase('test'));
+
 
 /*
     @function isEmptyString
@@ -83,6 +246,14 @@
                     - '    ', you get the point
                     CHALLENGE: you don't need to use any sort of loops for this
 */
+const isEmptyString = (term) => {
+  
+}
+
+console.log(isEmptyString(''));
+console.log(isEmptyString(' '));
+console.log(isEmptyString('  '));
+
 
 /*
     @function parseInt
@@ -176,11 +347,4 @@
             and assert that the correct result is returned
         - if incorrect inputs, throw error
             
-*/
-
-
-
-
-
-
-
+                 */
